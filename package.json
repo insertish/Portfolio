@@ -1,0 +1,27 @@
+{
+  "dependencies": {
+    "@zeit/next-sass": "^1.0.1",
+    "gray-matter": "^4.0.2",
+    "next": "^9.2.0",
+    "node-sass": "^4.13.1",
+    "react": "^16.12.0",
+    "react-dom": "^16.12.0",
+    "react-markdown": "^4.3.1"
+  },
+  "name": "website",
+  "version": "1.0.0",
+  "main": "dist/index.js",
+  "license": "MIT",
+  "repository": "https://gitlab.insrt.uk/insert/website",
+  "author": "Paul Makles <insrt.uk>",
+  "scripts": {
+    "dev": "next",
+    "build": "next build",
+    "start": "next start"
+  },
+  "devDependencies": {
+    "@types/node": "^13.1.8",
+    "@types/react": "^16.9.18",
+    "typescript": "^3.7.5"
+  }
+}
