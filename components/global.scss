@@ -1,0 +1,33 @@
+@import url('https://fonts.googleapis.com/css?family=Quicksand:300,400,700&display=swap');
+
+html, body {
+	font-family: 'Quicksand', sans-serif;
+	margin: 0;
+}
+
+.container {
+	margin: auto;
+	max-width: 640px;
+}
+
+.overline {
+	font-weight: 300;
+	font-size: 0.9em;
+	text-transform: uppercase;
+}
+
+img {
+	max-width: 100%;
+}
+
+h1 {
+	font-weight: 700;
+}
+
+em {
+	background: black;
+	padding: .1em .6em .2em .6em;
+	border-radius: .3em;
+	font-style: normal;
+	color: white;
+}

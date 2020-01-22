@@ -1,13 +1,19 @@
-import { NextPage } from 'next'
+import { NextPage, NextComponentType } from 'next'
 import Error from 'next/error'
 
 import matter from 'gray-matter'
 import ReactMarkdown from 'react-markdown'
+import ReactUtterences from 'react-utterances'
+
+import { global, Header } from '../../components/global';
 
 interface PostProps {
 	data: {
-		title: string,
 		slug: string,
+		title: string,
+		overline: string,
+		published: string,
+		hero?: string,
 	},
 	content: string,
 
@@ -19,16 +25,18 @@ const Page: NextPage = (props: PostProps) => {
 	if (!props.exists)
 		return <Error statusCode={404} />
 
-	let { title, slug } = props.data;
+	let { slug, title, overline, published, hero } = props.data;
 
 	return (
 		<main>
-			<head>
-				<title>{title} – insrt.uk</title>
-			</head>
-			<body>
-				<ReactMarkdown source={props.content} />
-			</body>
+			<Header title={title} />
+			<div className={global.container}>
+				<p className={global.overline}>{overline} &middot; {published}</p>
+				{ hero && <img src={hero} /> }
+				<ReactMarkdown escapeHtml={false} skipHtml={false} source={props.content} />
+				
+				{/*<ReactUtterences repo="insertish/comments" type="pathname" />*/}
+			</div>
 		</main>
 	)
 }

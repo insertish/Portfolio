@@ -1,0 +1,26 @@
+.header {
+	width: 100%;
+	
+	border-bottom: 2px dotted rgba(25, 25, 25, 0.14);
+}
+
+.innerHeader {
+	max-width: 640px;
+	margin: auto;
+
+	padding: 0.7em 0;
+
+	> h1 {
+		margin: 0;
+	}
+}
+
+.blink {
+	animation: blink 1.3s cubic-bezier(.65,.16,.92,-0.35) infinite;
+}
+
+@keyframes blink {
+	50% {
+		opacity: 0;
+	}
+}
