@@ -58,12 +58,25 @@ export function Header(props: { title: string }) {
 			</Head>
 			<div className={styles.header}>
 				<div className={styles.innerHeader}>
-					<h1
-						onMouseEnter={() => animateTo(strings[Math.floor(Math.random() * strings.length)])}
-						onMouseLeave={() => animateTo("insrt")}>
-						&gt;{text}<span className={styles.blink}>_</span></h1>
+					<div>
+						<h2
+							onMouseEnter={() => animateTo(strings[Math.floor(Math.random() * strings.length)])}
+							onMouseLeave={() => animateTo("insrt")}>
+							&gt;{text}<span className={styles.blink}>_</span></h2>
+					</div>
+					<div></div>
+					<span>projects</span>
+					<span>posts</span>
+					<span>gitlab</span>
 				</div>
 			</div>
 		</Fragment>
+	);
+}
+
+
+export function Footer() {
+	return (
+		<div className={styles.footer}>&copy; { new Date().getFullYear() } Paul Makles</div>
 	);
 }

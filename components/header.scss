@@ -1,17 +1,31 @@
 .header {
 	width: 100%;
-	
+	user-select: none;
 	border-bottom: 2px dotted rgba(25, 25, 25, 0.14);
+	margin-bottom: 1em;
 }
 
 .innerHeader {
+	display: flex;
+
 	max-width: 640px;
 	margin: auto;
 
 	padding: 0.7em 0;
 
-	> h1 {
+	> :nth-child(1) > h2 {
 		margin: 0;
+		min-width: 108px;
+	}
+
+	> :nth-child(2) {
+		flex-grow: 1;
+	}
+
+	> span {
+		padding: 0 .6em;
+		line-height: 40px;
+		font-weight: 600;
 	}
 }
 
@@ -23,4 +37,16 @@
 	50% {
 		opacity: 0;
 	}
+}
+
+.footer {
+	text-align: center;
+	font-size: 0.9em;
+	font-weight: 300;
+
+	padding: 3em;
+	margin: auto;
+
+	border-top: 2px dotted rgba(25, 25, 25, 0.14);
+	margin-top: 1em;
 }

@@ -1,15 +1,16 @@
 import { NextPage } from 'next'
 
 import styles from './index.scss';
+import { global, Header, Footer } from '../components/global';
 
 const Page: NextPage = () => (
 	<main>
-		<head>
-			<title>Paul Makles – insrt.uk</title>
-		</head>
-		<body>
-			<h1 className={styles.title}>hello!</h1>
-		</body>
+		<Header title="Paul Makles" />
+		<div className={global.container}>
+			this site is a work in progress<br/>
+			<a href="/post/website-design">see design reference post</a>
+		</div>
+		<Footer />
 	</main>
 )
 

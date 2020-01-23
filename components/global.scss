@@ -5,9 +5,37 @@ html, body {
 	margin: 0;
 }
 
+:global(.prettyprint) {
+	margin: 0;
+	padding: 1em !important;
+}
+
 .container {
 	margin: auto;
 	max-width: 640px;
+}
+
+.md {
+	img {
+		display: block;
+		margin: auto;
+	}
+
+	h6 {
+		text-align: center;
+		font-size: 0.8em;
+		margin: 0;
+		margin-bottom: 1em;
+	}
+}
+
+.hero {
+	width: 100%;
+	height: 480px;
+
+	background-attachment: fixed;
+	background-repeat: no-repeat;
+	background-size: cover;
 }
 
 .overline {
@@ -22,6 +50,32 @@ img {
 
 h1 {
 	font-weight: 700;
+	font-size: 4em;
+}
+
+h2 {
+	font-weight: 700;
+	font-size: 2em;
+}
+
+h3 {
+	font-weight: 700;
+	font-size: 1.6em;
+}
+
+h4 {
+	font-weight: 500;
+	font-size: 1.4em;
+}
+
+h5 {
+	font-weight: 500;
+	font-size: 1.2em;
+}
+
+h6 {
+	font-weight: 500;
+	font-size: 1em;
 }
 
 em {
@@ -30,4 +84,9 @@ em {
 	border-radius: .3em;
 	font-style: normal;
 	color: white;
+}
+
+hr {
+	border: none;
+	border-top: 1px dotted gray;
 }
