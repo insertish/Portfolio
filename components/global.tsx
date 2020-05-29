@@ -9,10 +9,8 @@ export const global = globalStyles;
 const intervals = [];
 const strings = [
 	"haha yes",
-	"epic time",
-	"oh yeah yeah",
-	"bruh moment",
-	"ayy lmao",
+	"epic moment",
+	"👉😎👉",
 ];
 
 export function Header(props: { title: string }) {
@@ -62,12 +60,12 @@ export function Header(props: { title: string }) {
 						<h2
 							onMouseEnter={() => animateTo(strings[Math.floor(Math.random() * strings.length)])}
 							onMouseLeave={() => animateTo("insrt")}>
-							&gt;{text}<span className={styles.blink}>_</span></h2>
+							<a href="/">&gt;{text}<span className={styles.blink}>_</span></a></h2>
 					</div>
 					<div></div>
-					<span>projects</span>
-					<span>posts</span>
-					<span>gitlab</span>
+					<span className={styles.disabled}>projects</span>
+					<span className={styles.disabled}>posts</span>
+					<span><a href="https://gitlab.insrt.uk" target="_blank">gitlab</a></span>
 				</div>
 			</div>
 		</Fragment>

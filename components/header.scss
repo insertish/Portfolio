@@ -15,7 +15,11 @@
 
 	> :nth-child(1) > h2 {
 		margin: 0;
-		min-width: 108px;
+        min-width: 108px;
+        
+        > a {
+            text-decoration: none;
+        }
 	}
 
 	> :nth-child(2) {
@@ -25,7 +29,11 @@
 	> span {
 		padding: 0 .6em;
 		line-height: 40px;
-		font-weight: 600;
+        font-weight: 600;
+        
+        > a {
+            text-decoration: none;
+        }
 	}
 }
 
@@ -49,4 +57,12 @@
 
 	border-top: 2px dotted rgba(25, 25, 25, 0.14);
 	margin-top: 1em;
+}
+
+.disabled {
+    color: gray;
+}
+
+a, a:link, a:visited {
+    color: black;
 }
