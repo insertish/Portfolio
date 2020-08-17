@@ -3,7 +3,7 @@ slug: website-design
 title: Website Design
 overline: This is an overline.
 published: 23nd January 2020
-hero-wide: /hero.png
+hero-wide: /design-hero.jpg
 ---
 ## reference for website *design*
 

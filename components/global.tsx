@@ -4,13 +4,14 @@ import styles from './header.scss';
 import { Fragment, useState } from 'react';
 import Head from 'next/head';
 
+import { Mail } from '@styled-icons/ionicons-outline';
+import { Gitlab } from '@styled-icons/boxicons-logos';
+
 export const global = globalStyles;
 
 const intervals = [];
 const strings = [
-	"haha yes",
-	"epic moment",
-	"👉😎👉",
+	"echo multiline?\r\r\r\r\nmultiline?\r\r\r\r\r\r\r\r\r\r\n>bro\r\r\r\r\n-bash: bro: command not found\n>",
 ];
 
 export function Header(props: { title: string }) {
@@ -48,6 +49,7 @@ export function Header(props: { title: string }) {
 		intervals.push(i);
 	}
 
+	let lines = text.split('\n');
 	return (
 		<Fragment>
 			<Head>
@@ -60,12 +62,24 @@ export function Header(props: { title: string }) {
 						<h2
 							onMouseEnter={() => animateTo(strings[Math.floor(Math.random() * strings.length)])}
 							onMouseLeave={() => animateTo("insrt")}>
-							<a href="/">&gt;{text}<span className={styles.blink}>_</span></a></h2>
+							<a href="/">
+								&gt;
+								{lines.map((x, i) =>
+									<Fragment>
+										{x}
+										{ i < lines.length - 1 && <br/> }
+									</Fragment>
+								)}
+								<span className={styles.blink}>_</span>
+							</a>
+						</h2>
 					</div>
 					<div></div>
-					<span className={styles.disabled}>projects</span>
-					<span className={styles.disabled}>posts</span>
-					<span><a href="https://gitlab.insrt.uk" target="_blank">gitlab</a></span>
+					<span>projects</span>
+					<span>posts</span>
+					<span>commission</span>
+					<span><a href="mailto:me@insrt.uk"><Mail size={20} /></a></span>
+					<span><a href="https://gitlab.insrt.uk" target="_blank"><Gitlab size={20} /></a></span>
 				</div>
 			</div>
 		</Fragment>

@@ -7,6 +7,7 @@ const Page: NextPage = () => (
 	<main>
 		<Header title="Paul Makles" />
 		<div className={global.container}>
+			Lorem ipsum dolor sit amet consectetur adipisicing elit. Omnis sit a explicabo obcaecati veritatis rem possimus excepturi similique iusto aliquam mollitia cum illum dolor deleniti non quia, quisquam minus natus. <br/><br/>
 			I have migrated servers hence you're currently seeing the new beta website.<br/>
             More stuff to appear soon ™️<br/>
 			<a href="/post/website-design">See the website's design reference post.</a>

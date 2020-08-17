@@ -1,5 +1,8 @@
 {
   "dependencies": {
+    "@styled-icons/boxicons-logos": "^10.15.1",
+    "@styled-icons/boxicons-regular": "^10.15.1",
+    "@styled-icons/ionicons-outline": "^10.15.1",
     "@zeit/next-sass": "^1.0.1",
     "gray-matter": "^4.0.2",
     "next": "^9.2.1-canary.9",
@@ -7,7 +10,8 @@
     "react": "^16.12.0",
     "react-dom": "^16.12.0",
     "react-markdown": "^4.3.1",
-    "react-utterances": "^0.6.4"
+    "react-utterances": "^0.6.4",
+    "styled-components": "^5.1.1"
   },
   "name": "website",
   "version": "1.0.0",
