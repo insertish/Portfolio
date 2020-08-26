@@ -1,0 +1,36 @@
+.post {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    
+    margin-top: 0.2em;
+    border-radius: 4px;
+    transition: .2s ease all;
+
+    &:hover {
+        background-color: #1112;
+        filter: brightness(85%);
+    }
+
+    .meta {
+        flex-grow: 1;
+        padding: 0.6em;
+
+        .title {
+            font-size: 1.2em;
+        }
+
+        .description {
+            font-size: 0.8em;
+
+            time {
+                font-weight: 300;
+            }
+        }
+    }
+
+    .hero {
+        width: 120px;
+        background-size: cover;
+    }
+}

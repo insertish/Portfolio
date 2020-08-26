@@ -1,0 +1,61 @@
+img {
+	max-width: 100%;
+}
+
+h1 {
+	font-weight: 700;
+	font-size: 4em;
+}
+
+h2 {
+	font-weight: 700;
+	font-size: 2em;
+}
+
+h3 {
+	font-weight: 700;
+	font-size: 1.6em;
+}
+
+h4 {
+	font-weight: 500;
+	font-size: 1.4em;
+}
+
+h5 {
+	font-weight: 500;
+	font-size: 1.2em;
+}
+
+h6 {
+	font-weight: 500;
+	font-size: 1em;
+}
+
+em {
+	background: black;
+	padding: .1em .6em .2em .6em;
+	border-radius: .3em;
+	font-style: normal;
+	color: white;
+}
+
+hr {
+	border: none;
+	border-top: 1px dotted gray;
+}
+
+a {
+	color: inherit;
+	text-decoration: none;
+
+	&[data-active="true"] {
+		color: rgb(97, 97, 97);
+	}
+}
+
+span, p {
+	a {
+		border-bottom: 1px solid black;
+	}
+}

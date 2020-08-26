@@ -1,9 +1,9 @@
 ---
 slug: website-design
+published: Thu, 23 Jan 2020 12:00:00 GMT
+description: This page is used to test design ideas.
 title: Website Design
-overline: This is an overline.
-published: 23nd January 2020
-hero-wide: /design-hero.jpg
+cover: /design-hero.jpg
 ---
 ## reference for website *design*
 
@@ -25,7 +25,7 @@ Vitae tortor condimentum lacinia quis vel eros donec. **This is bold text.** Nis
 
 ---
 
-Code blocks are automatically prettified, specify a language at the beginning of the fence. Prettification is done using Google's [code-prettify](https://github.com/google/code-prettify).
+Code blocks are automatically prettified, you can specify a language but it should be auto-detected by default. Prettification is done using [highlight.js](https://highlightjs.org/), the theme used is Shades of Purple.
 
 ```typescript
 // this is a code block

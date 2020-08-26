@@ -1,3 +1,4 @@
+import Link from 'next/link';
 import styles from './Project.module.scss';
 
 interface Props {
@@ -6,6 +7,10 @@ interface Props {
 
 export function Project(props: Props) {
     return (
-        <div className={styles.project} style={{ background: `url('/projects/${props.id}.png?')` }}></div>
+        <Link href={`/project/${props.id}`}>
+            <a>
+                <div className={styles.project} style={{ background: `url('/projects/${props.id}.png?')` }}></div>
+            </a>
+        </Link>
     )
 }

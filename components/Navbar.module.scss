@@ -10,8 +10,13 @@
     }
 
     .title {
+        flex-grow: 1;
         font-size: 2em;
         font-weight: 700;
+
+        .blink {
+            animation: blink 1.3s cubic-bezier(.65,.16,.92,-0.35) infinite;
+        }
     }
 
     .actions {
@@ -23,4 +28,10 @@
             margin-right: 0.8em;
         }
     }
+}
+
+@keyframes blink {
+	50% {
+		opacity: 0;
+	}
 }

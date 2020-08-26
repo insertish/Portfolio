@@ -1,16 +1,15 @@
 ---
 slug: exagear-install
-title: Installing Exagear In 2020 (Raspberry Pi)
+published: Sat, 20 Jun 2020 12:00:00 GMT
+title: Install Exagear In 2020 (Raspberry Pi)
+description: Eltechs may be gone, but you can still use Exagear.
 tags: exagear raspberry pi
-overline: Eltechs may be gone, but Exagear lives on.
-published: 20th June 2020
-hero-wide: /exagear-install.jpg
+cover: /exagear-install.jpg
 ---
-## Installing Exagear in 2020 (for RPi)
 
 Exagear is gone and so is Eltechs, suprisingly enough their activation server seems to be still working (?), although my supposed "multi-device license" only worked on my Pi and not someone's else, keeping in mind that this was a fresh installation of Raspbian I can only assume their activation server is online and that I was sold something else than stated.
 
-When I first bought Exagear, like an idiot, I bought the enterprise version for the RPi 3 (costing £32!), so I don't feel bad at all sharing anything below as my license was clearly does not work anymore or I was sold the wrong license. And the company is gone anyways...
+When I first bought Exagear, I went for the enterprise version for the RPi 3 (costing £32!), so I don't feel bad at all sharing anything below as my license does not work anymore or I was actually sold the wrong license. And the company is gone anyways...
 
 ### Downloading Exagear
 
