@@ -5,7 +5,7 @@ import { Overline } from '../components/Overline';
 import { Container } from '../components/Container';
 
 import { Project as ProjectI } from '../types/Project';
-import { ProjectEntry } from '../components/ProjectEntry';
+import { ProjectEntry } from '../components/ProjectCard';
 import { find_entries } from '../util/loader';
 
 interface Props {
@@ -35,7 +35,7 @@ export default function Projects(props: Props) {
 						)
 					}
 				</Grid>
-				<Overline>all projects</Overline>
+				<Overline description="sorted by date">all projects</Overline>
 				<Grid>
 					{
 						props.projects.map(x =>

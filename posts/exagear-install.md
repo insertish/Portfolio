@@ -3,7 +3,7 @@ slug: exagear-install
 published: 2020-06-20T12:00:00Z
 title: Install Exagear In 2020 (Raspberry Pi)
 description: Eltechs may be gone, but you can still use Exagear.
-tags: exagear raspberry pi
+tags: exagear, raspberry pi, eltechs
 cover: /exagear-install.jpg
 ---
 

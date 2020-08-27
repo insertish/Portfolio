@@ -10,6 +10,7 @@ import { readFile, readdir } from 'fs/promises';
 import { Post as PostI } from '../../types/Post';
 import { Markdown } from '../../components/Markdown';
 import { parse_entry } from '../../util/loader';
+import { Extra } from '../../components/Extra';
 
 interface Props {
     meta: PostI,
@@ -32,6 +33,7 @@ export default function Post({ meta, content }: Props) {
             { meta.cover && <div style={{ backgroundImage: `url('${meta.cover}')` }} className={styles.cover}></div> }
 			<Container>
                 <Markdown content={content} />
+                { meta.tags && <Extra style="mini">Tags: { meta.tags }</Extra> }
                 <ReactUtterences repo="insertish/comments" type="pathname" />
             </Container>
 		</Page>

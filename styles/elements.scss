@@ -34,8 +34,8 @@ h6 {
 
 em {
 	margin: .1em;
-	padding: .3em .4em;
 	color: white;
+	padding: .3em .4em;
 	font-style: normal;
 	border-radius: .3em;
 	background: black;
@@ -45,6 +45,18 @@ em {
 
 	svg {
 		margin-right: .4em;
+	}
+
+	&[data-mini="true"] {
+		padding: .4em;
+
+		span {
+			display: none;
+		}
+
+		svg {
+			margin: 0;
+		}
 	}
 }
 

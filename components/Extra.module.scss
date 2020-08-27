@@ -1,0 +1,13 @@
+.extra {
+    margin: 1em;
+    font-size: 1.2em;
+    text-align: center;
+    
+    &[data-style="mini"] {
+        font-size: 0.7em;
+    }
+
+    a {
+        border-bottom: 1px solid black;
+    }
+}

@@ -6,6 +6,8 @@ import { Overline } from '../components/Overline';
 import { Container } from '../components/Container';
 
 import Head from 'next/head';
+import Link from 'next/link';
+import { Extra } from '../components/Extra';
 import { find_entries } from '../util/loader';
 import { Post as PostI } from '../types/Post';
 import { Project as ProjectI } from '../types/Project';
@@ -41,6 +43,13 @@ export default function Home(props: Props) {
 						<Post key={x.slug} {...x} />
 					)
 				}
+				<Extra>
+					<Link href="/projects">
+						<a>
+							View all posts.
+						</a>
+					</Link>
+				</Extra>
 				<Overline>recent work</Overline>
 				<Grid>
 					{

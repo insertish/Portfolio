@@ -1,15 +1,21 @@
-import { ReactNode } from 'react';
+import { ReactNode, Fragment } from 'react';
 
 interface Props {
+    text?: string,
+    mini?: boolean,
     color?: string,
+    icon?: ReactNode,
     background?: string,
     children?: ReactNode | ReactNode[],
 }
 
 export function Badge(props: Props) {
     return (
-        <em style={{ background: props.background, color: props.color }}>
-            { props.children }
+        <em style={{ background: props.background, color: props.color }} data-mini={props.mini}>
+            { props.icon }
+            <span>
+                { props.text ?? props.children }
+            </span>
         </em>
     )
 }
@@ -20,26 +26,42 @@ import { Library, Globe, GameController, HelpCircle } from '@styled-icons/ionico
 import { Opengl, Javascript, Typescript, Minetest, NextDotJs } from '@styled-icons/simple-icons';
 
 interface TechnologyProps {
-    tech: string
+    tech: string,
+    mini?: boolean
 }
 
 export function TechnologyBadge(props: TechnologyProps) {
+    const size = props.mini ? 16 : 24;
+
     switch (props.tech.toLowerCase().trim()) {
         // Languages
-        case 'rust': return <Badge background="#f74c00"><Rust size={24} /> Rust</Badge>;
-        case 'javascript': return <Badge background="#f7e018" color="black"><Javascript size={24} /> Javascript</Badge>;
-        case 'typescript': return <Badge background="#007acd" color="white"><Typescript size={24} /> Typescript</Badge>;
+        case 'rust': return <Badge background="#f74c00" mini={props.mini} text="Rust" icon={<Rust size={size} />} />;
+        case 'javascript': return <Badge background="#f7e018" color="black" mini={props.mini} text="Javascript" icon={<Javascript size={size} />} />;
+        case 'typescript': return <Badge background="#007acd" color="white" mini={props.mini} text="Typescript" icon={<Typescript size={size} />} />;
         // Tags
-        case 'opengl': return <Badge background="#ddd" color="#6486a2"><Opengl size={24} /> OpenGL</Badge>;
-        case 'react': return <Badge background="#20232a" color="#5bc9e7"><ReactLogo size={24} /> React</Badge>;
-        case 'next.js': return <Badge background="#ededed" color="black"><NextDotJs size={24} /> Next.js</Badge>;
-        case 'minecraft': return <Badge background="#1c1c1c" color="#34aa2f"><Minetest size={24} /> Minecraft</Badge>;
+        case 'opengl': return <Badge background="#ddd" color="#6486a2" mini={props.mini} text="OpenGL" icon={<Opengl size={size} />} />;
+        case 'react': return <Badge background="#20232a" color="#5bc9e7" mini={props.mini} text="React" icon={<ReactLogo size={size} />} />;
+        case 'next.js': return <Badge background="#ededed" color="black" mini={props.mini} text="Next.js" icon={<NextDotJs size={size} />} />;
+        case 'minecraft': return <Badge background="#1c1c1c" color="#34aa2f" mini={props.mini} text="Minecraft" icon={<Minetest size={size} />} />;
         // Types
-        case 'website': return <Badge><Globe size={24} /> Website</Badge>;
-        case 'app': return <Badge><WebAsset size={24} /> App</Badge>;
-        case 'library': return <Badge><Library size={24} /> Library</Badge>;
-        case 'game': return <Badge><GameController size={24} /> Game</Badge>;
-        case 'other': return <Badge><HelpCircle size={24} /> Other</Badge>;
-        default: return <Badge>{ props.tech }</Badge>;
+        case 'website': return <Badge mini={props.mini} text="Website" icon={<Globe size={size} />} />;
+        case 'app': return <Badge mini={props.mini} text="App" icon={<WebAsset size={size} />} />;
+        case 'library': return <Badge mini={props.mini} text="Library" icon={<Library size={size} />} />;
+        case 'game': return <Badge mini={props.mini} text="Game" icon={<GameController size={size} />} />;
+        case 'other': return <Badge mini={props.mini} text="Other" icon={<HelpCircle size={size} />} />;
+        default: return props.mini ? null : <Badge>{ props.tech }</Badge>;
     }
+}
+
+interface TechListProps {
+    techs: string,
+    mini?: boolean
+}
+
+export function TechList(props: TechListProps) {
+    return (
+        <Fragment>
+            { props.techs.split(',').map(x => <TechnologyBadge tech={x} mini={props.mini} />) }
+        </Fragment>
+    );
 }
