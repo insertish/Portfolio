@@ -17,4 +17,4 @@ Took the time to finish up this website, saving a snapshot here in case I ever c
 
 ###### A Project Page
 
-The site is built with next.js and everything is designed in order to allow me to do a static export and just upload it on to my web server. You can see the [project details here](/project/website) or the [repository here](https://gitlab.insrt.uk/insert/website).
+The site is built with next.js and everything is designed in order to allow me to do a static export and just upload it on to my web server. You can see the [project details here](/project/website) or the [repository here](https://gitlab.insrt.uk/insert/website). All the posts and project descriptions are rendered using Markdown to make my life easier.

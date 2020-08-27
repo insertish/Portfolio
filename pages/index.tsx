@@ -28,7 +28,7 @@ export default function Home(props: Props) {
 			</Head>
 			<Container>
 				<p>
-					Lorem ipsum dolor sit amet consectetur adipisicing elit. Libero minima maxime, commodi hic natus, soluta amet ex facilis placeat blanditiis id quaerat modi porro. Doloremque, dolorum unde! Fugiat, dignissimos ipsum.
+					Hi, welcome to my personal site, this is a sort of portfolio and place for me to collect all my work, take a look for yourself.
 				</p>
 				<Overline>contact me</Overline>
 				<p>
@@ -44,13 +44,13 @@ export default function Home(props: Props) {
 					)
 				}
 				<Extra>
-					<Link href="/projects">
+					<Link href="/posts">
 						<a>
 							View all posts.
 						</a>
 					</Link>
 				</Extra>
-				<Overline>recent work</Overline>
+				<Overline description="also check out the featured projects!">recent work</Overline>
 				<Grid>
 					{
 						props.projects.map(x =>
