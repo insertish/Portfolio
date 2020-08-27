@@ -5,6 +5,7 @@ export interface Project {
     timestamp: number,
 
     featured?: boolean,
+    hidden?: boolean,
 
     name: string,
     description: string,
@@ -12,7 +13,7 @@ export interface Project {
     tags: string,
     cover?: string,
     languages: string,
-    type: 'app' | 'library' | 'game' | 'other',
+    type: 'website' | 'app' | 'library' | 'game' | 'other',
 
     homepage?: string,
     repository?: string,

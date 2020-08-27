@@ -7,7 +7,7 @@ name: SMP Website
 description: Web template for Minecraft SMP servers.
 tags: React, Minecraft, Minecraft SMP, website template
 languages: javascript, typescript
-type: app
+type: website
 homepage: https://smp-template.insrt.uk
 ---
 

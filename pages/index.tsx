@@ -41,7 +41,7 @@ export default function Home(props: Props) {
 						<Post key={x.slug} {...x} />
 					)
 				}
-				<Overline>recent projects</Overline>
+				<Overline>recent work</Overline>
 				<Grid>
 					{
 						props.projects.map(x =>
@@ -61,6 +61,7 @@ export async function getStaticProps() {
 			posts: (await find_entries('posts'))
 				.slice(0, 3),
 			projects: (await find_entries('projects'))
+				.filter(x => !x.hidden)
 				.slice(0, 5)
 		}
 	};
