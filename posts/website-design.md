@@ -1,6 +1,6 @@
 ---
 slug: website-design
-published: Thu, 23 Jan 2020 12:00:00 GMT
+published: 2020-01-23T12:00:00Z
 description: This page is used to test design ideas.
 title: Website Design
 cover: /design-hero.jpg

@@ -9,6 +9,7 @@ import ReactUtterences from 'react-utterances'
 import { readFile, readdir } from 'fs/promises';
 import { Post as PostI } from '../../types/Post';
 import { Markdown } from '../../components/Markdown';
+import { parse_entry } from '../../util/loader';
 
 interface Props {
     meta: PostI,
@@ -25,7 +26,7 @@ export default function Post({ meta, content }: Props) {
                 <h1>{meta.title}</h1>
                 <p className={styles.overline}>
                     { meta.description } { meta.description && <span> &middot; </span> }
-                    <time>{ dayjs(meta.published).format('Do MMMM YYYY') }</time>
+                    <time>{ dayjs(meta.timestamp).format('Do MMMM YYYY') }</time>
                 </p>
             </Container>
             { meta.cover && <div style={{ backgroundImage: `url('${meta.cover}')` }} className={styles.cover}></div> }
@@ -39,15 +40,10 @@ export default function Post({ meta, content }: Props) {
 
 export async function getStaticProps(context) {
     let { slug } = context.params;
-    
     let content = await readFile(`posts/${slug}.md`);
-    let data = matter(content);
 
     return {
-        props: {
-            meta: data.data,
-            content: data.content
-        }
+        props: parse_entry(content.toString())
     }
 }
 

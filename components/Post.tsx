@@ -8,14 +8,16 @@ export function Post(props: PostI) {
         <Link href={`/post/${props.slug}`}>
             <a>
                 <div className={styles.post}>
-                    <div className={styles.hero} style={{ backgroundImage: `url('${props.cover}')` }}></div>
+                    {
+                        props.cover && <div className={styles.hero} style={{ backgroundImage: `url('${props.cover}')` }}></div>
+                    }
                     <div className={styles.meta}>
                         <div className={styles.title}>
                             { props.title }
                         </div>
                         <div className={styles.description}>
                             { props.description } { props.description && <span> — </span> }
-                            <time>{ dayjs(props.published).format('Do MMMM YYYY') }</time>
+                            <time>{ dayjs(props.timestamp).format('Do MMMM YYYY') }</time>
                         </div>
                     </div>
                 </div>

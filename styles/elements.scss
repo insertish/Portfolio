@@ -33,11 +33,19 @@ h6 {
 }
 
 em {
-	background: black;
-	padding: .1em .6em .2em .6em;
-	border-radius: .3em;
-	font-style: normal;
+	margin: .1em;
+	padding: .3em .4em;
 	color: white;
+	font-style: normal;
+	border-radius: .3em;
+	background: black;
+	flex-direction: row;
+	align-items: center;
+	display: inline-flex;
+
+	svg {
+		margin-right: .4em;
+	}
 }
 
 hr {
@@ -54,8 +62,15 @@ a {
 	}
 }
 
-span, p {
+span, p, li {
 	a {
 		border-bottom: 1px solid black;
 	}
+}
+
+footer {
+	margin: 3em 0;
+	color: gray;
+	font-size: 0.8em;
+	text-align: center;
 }

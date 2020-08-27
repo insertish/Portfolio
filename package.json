@@ -9,7 +9,10 @@
   },
   "dependencies": {
     "@styled-icons/boxicons-logos": "^10.15.1",
+    "@styled-icons/fa-brands": "^10.18.0",
     "@styled-icons/ionicons-outline": "^10.15.1",
+    "@styled-icons/material-outlined": "^10.18.0",
+    "@styled-icons/simple-icons": "^10.18.0",
     "@zeit/next-sass": "^1.0.1",
     "dayjs": "^1.8.34",
     "gray-matter": "^4.0.2",

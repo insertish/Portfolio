@@ -1,6 +1,6 @@
 .navbar {
-    padding: 1em 0;
     display: flex;
+    padding: 1em 0;
     align-items: center;
     flex-direction: row;
     justify-content: space-between;
@@ -13,6 +13,13 @@
         flex-grow: 1;
         font-size: 2em;
         font-weight: 700;
+
+        display: flex;
+        flex-direction: row;
+
+        > * {
+            flex-grow: 1;
+        }
 
         .blink {
             animation: blink 1.3s cubic-bezier(.65,.16,.92,-0.35) infinite;
@@ -34,4 +41,14 @@
 	50% {
 		opacity: 0;
 	}
+}
+
+@media only screen and (max-width: 640px) {
+    .navbar {
+        flex-direction: column;
+    }
+
+    .actions {
+        margin-top: 0.4em;
+    }
 }

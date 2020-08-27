@@ -3,4 +3,28 @@
     padding-top: 50%;
     border-radius: 4px;
     background-size: contain !important;
+    display: flex;
+
+    > div {
+        width: 100%;
+        margin-top: -50%;
+        position: relative;
+
+        display: flex;
+        border-radius: 4px;
+        align-items: center;
+        justify-content: center;
+        border: 1px solid gray;
+        transition: .2s ease background-color;
+
+        > div {
+            color: #222;
+            margin-top: 0;
+            font-size: 1.4em;
+        }
+
+        &:hover {
+            background: #ddd;
+        }
+    }
 }

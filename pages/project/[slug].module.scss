@@ -1,0 +1,53 @@
+.header {
+	display: flex;
+	flex-direction: row;
+	align-items: center;
+	margin: 2em 0;
+	justify-content: space-between;
+
+	.title {
+		h1 {
+			margin: 0;
+		}
+	}
+
+	img {
+		flex-shrink: 0;
+		max-height: 64px;
+		border-radius: 4px;
+	}
+}
+
+.list {
+	padding: 0;
+	list-style: none;
+
+	li {
+		margin: 4px 0;
+		padding-left: 4px;
+		transition: .2s ease all;
+		border-left: 1px solid #444;
+
+		display: flex;
+		align-items: center;
+		flex-direction: row;
+
+		> :first-child {
+			margin-left: .2em;
+		}
+
+		time {
+			font-weight: 600;
+		}
+
+		&:hover {
+			background: #1111;
+		}
+	}
+}
+
+.overline {
+	font-weight: 400;
+	font-size: 0.9em;
+	text-transform: uppercase;
+}

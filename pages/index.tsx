@@ -5,12 +5,14 @@ import { Project } from '../components/Project';
 import { Overline } from '../components/Overline';
 import { Container } from '../components/Container';
 
-import matter from 'gray-matter';
+import Head from 'next/head';
+import { find_entries } from '../util/loader';
 import { Post as PostI } from '../types/Post';
-import { readFile, readdir } from 'fs/promises';
+import { Project as ProjectI } from '../types/Project';
 
 interface Props {
-	posts: PostI[]
+	posts: PostI[],
+	projects: ProjectI[]
 }
 
 export default function Home(props: Props) {
@@ -19,6 +21,9 @@ export default function Home(props: Props) {
 			page="index"
 			title="Paul Makles"
 		>
+			<Head>
+				<meta property="og:type" content="website" />
+			</Head>
 			<Container>
 				<p>
 					Lorem ipsum dolor sit amet consectetur adipisicing elit. Libero minima maxime, commodi hic natus, soluta amet ex facilis placeat blanditiis id quaerat modi porro. Doloremque, dolorum unde! Fugiat, dignissimos ipsum.
@@ -38,14 +43,12 @@ export default function Home(props: Props) {
 				}
 				<Overline>recent projects</Overline>
 				<Grid>
-					<Project id="revolt" />
-					<Project id="teamsy" />
-					<Project id="smp-website" />
-					<Project id="plottie" />
-					<Project id="byol" />
-					<div>
-						View more...
-					</div>
+					{
+						props.projects.map(x =>
+							<Project key={x.slug} id={x.slug} />
+						)
+					}
+					<Project />
 				</Grid>
 			</Container>
 		</Page>
@@ -53,23 +56,12 @@ export default function Home(props: Props) {
 }
 
 export async function getStaticProps() {
-	const list = await readdir('posts');
-	const posts = [];
-
-	for (let file of list) {
-		let data = await readFile(`posts/${file}`);
-		let meta = matter(data.toString());
-		posts.push({
-			...meta.data,
-			timestamp: + new Date(meta.data.published)
-		});
-	}
-
-	posts.sort((a, b) => b.timestamp - a.timestamp);
-
 	return {
 		props: {
-			posts: posts.slice(0, 3)
+			posts: (await find_entries('posts'))
+				.slice(0, 3),
+			projects: (await find_entries('projects'))
+				.slice(0, 5)
 		}
 	};
 }
