@@ -45,8 +45,8 @@ export default function Project({ meta, content }: Props) {
                     <li>Tags: { meta.tags.split(',').map(x => <TechnologyBadge tech={x} />) }</li>
                     <li>Type: { meta.type.split(',').map(x => <TechnologyBadge tech={x} />) }</li>
                     { meta.homepage && <li>View homepage: <a href={meta.homepage} target="_blank">{meta.homepage}</a></li> }
-                    { meta.repository && <li>View repository: <a href={meta.homepage} target="_blank">{meta.repository}</a></li> }
-                    { meta.library && <li>View library package: <a href={meta.homepage} target="_blank">{meta.library}</a></li> }
+                    { meta.repository && <li>View repository: <a href={meta.repository} target="_blank">{meta.repository}</a></li> }
+                    { meta.library && <li>View library package: <a href={meta.library} target="_blank">{meta.library}</a></li> }
                 </ul>
                 { content.length > 0 && <Overline>Description</Overline> }
                 <Markdown content={content} />
