@@ -12,6 +12,12 @@
         .project {
             border-radius: 4px 4px 0px 0px;
         }
+
+        &:hover {
+            border-top: 1px solid transparent;
+            border-left: 1px solid transparent;
+            border-right: 1px solid transparent;
+        }
     }
 
     &:hover {
