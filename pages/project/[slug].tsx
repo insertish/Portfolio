@@ -36,7 +36,7 @@ export default function Project({ meta, content }: Props) {
                             { meta.description }
                         </p>
                     </div>
-                    <img src={`/projects/${meta.slug}.png`} />
+                    { meta.banner && <img src={`${meta.banner}`} /> }
                 </div>
                 <ul className={styles.list}>
                     <li>Started <time>{ dayjs(meta.started).format('Do MMMM YYYY') }</time></li>
