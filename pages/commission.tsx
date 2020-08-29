@@ -4,10 +4,14 @@ import { Project } from '../components/Project';
 import { Overline } from '../components/Overline';
 import { Container } from '../components/Container';
 
-export default function Commission() {
-	let working = 1;
-	let finished = 2;
+import { find_entries } from '../util/loader';
+import { Project as ProjectI } from '../types/Project';
 
+interface Props {
+	projects: ProjectI[]
+}
+
+export default function Commission(props: Props) {
 	return (
 		<Page
 			page="commission"
@@ -19,9 +23,23 @@ export default function Commission() {
 				</p>
 				<Overline>commissioned work</Overline>
 				<Grid>
-					<Project id="smp-website" />
+					{
+						props.projects.map(x =>
+							<Project key={x.slug} project={x} />
+						)
+					}
 				</Grid>
 			</Container>
 		</Page>
 	)
+}
+
+const PROJECTS = [ 'smp-website' ];
+export async function getStaticProps() {
+	return {
+		props: {
+			projects: (await find_entries('projects'))
+				.filter(x => PROJECTS.includes(x.slug))
+		}
+	};
 }
