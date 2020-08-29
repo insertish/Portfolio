@@ -1,4 +1,6 @@
 import { ReactNode, Fragment } from 'react';
+import styles from './Badge.module.scss';
+import { Tooltip } from 'react-tippy';
 
 interface Props {
     text?: string,
@@ -11,12 +13,23 @@ interface Props {
 
 export function Badge(props: Props) {
     return (
-        <em style={{ background: props.background, color: props.color }} data-mini={props.mini}>
-            { props.icon }
-            <span>
-                { props.text ?? props.children }
-            </span>
-        </em>
+        <Tooltip
+            disabled={!props.mini}
+            followCursor={false}
+            title={props.text}
+            position="top"
+            arrow
+        >
+            <em className={styles.badge}
+                style={{ background: props.background, color: props.color }}
+                data-mini={props.mini}
+            >
+                { props.icon }
+                <span>
+                    { props.text ?? props.children }
+                </span>
+            </em>
+        </Tooltip>
     )
 }
 

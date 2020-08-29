@@ -13,7 +13,6 @@
     "@styled-icons/ionicons-outline": "^10.15.1",
     "@styled-icons/material-outlined": "^10.18.0",
     "@styled-icons/simple-icons": "^10.18.0",
-    "@zeit/next-sass": "^1.0.1",
     "dayjs": "^1.8.34",
     "gray-matter": "^4.0.2",
     "highlight.js": "^10.1.2",
@@ -22,6 +21,7 @@
     "node-sass": "^4.14.1",
     "react": "16.13.1",
     "react-dom": "16.13.1",
+    "react-tippy": "^1.4.0",
     "react-utterances": "^0.6.4",
     "sass": "^1.26.10",
     "styled-components": "^5.1.1"

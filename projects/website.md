@@ -5,6 +5,7 @@ updated: 2020-08-27T17:54:29Z
 hidden: true
 name: Personal Website
 description: The website that you're looking at!
+banner: /projects/website.png
 tags: React, Next.js
 languages: javascript, typescript
 type: website

@@ -31,7 +31,7 @@ export default function Projects(props: Props) {
 						props.projects
 							.filter(x => x.featured)
 							.map(x =>
-								<Project key={x.slug} id={x.slug} />
+								<Project key={x.slug} project={x} />
 						)
 					}
 				</Grid>

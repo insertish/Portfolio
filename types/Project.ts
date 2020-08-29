@@ -9,6 +9,7 @@ export interface Project {
 
     name: string,
     description: string,
+    banner?: string,
     
     tags: string,
     cover?: string,

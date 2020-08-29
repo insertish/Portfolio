@@ -5,6 +5,7 @@ updated: 2020-07-10T06:30:09Z
 featured: true
 name: SMP Website
 description: Web template for Minecraft SMP servers.
+banner: /projects/smp-website.png
 tags: React, Minecraft, Minecraft SMP, website template
 languages: javascript, typescript
 type: website

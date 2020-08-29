@@ -5,6 +5,7 @@ updated: 2020-07-17T07:43:49Z
 featured: true
 name: Teamsy
 description: Social activity aggregator with private API.
+banner: /projects/teamsy.png
 tags: live stream data, creator feeds, twitch, twitter, youtube
 languages: javascript, typescript
 type: app

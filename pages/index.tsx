@@ -54,10 +54,10 @@ export default function Home(props: Props) {
 				<Grid>
 					{
 						props.projects.map(x =>
-							<Project key={x.slug} id={x.slug} />
+							<Project key={x.slug} project={x} />
 						)
 					}
-					<Project />
+					<Project project={{}} />
 				</Grid>
 			</Container>
 		</Page>

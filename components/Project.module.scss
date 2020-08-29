@@ -1,3 +1,18 @@
+.wrapper {
+    border-radius: 4px;
+    pointer-events: all;
+    transition: .2s ease all;
+
+    &[data-card="true"] {
+        border-radius: 4px 4px 0px 0px;
+    }
+
+    &:hover {
+        background-color: #1112;
+        filter: brightness(85%);
+    }
+}
+
 .project {
     width: 100%;
     padding-top: 50%;
@@ -15,16 +30,18 @@
         align-items: center;
         justify-content: center;
         border: 1px solid gray;
-        transition: .2s ease background-color;
 
         > div {
             color: #222;
             margin-top: 0;
             font-size: 1.4em;
         }
+    }
 
-        &:hover {
-            background: #ddd;
+    &[data-project="true"] {
+        > div {
+            border: none;
+	        font-family: 'Fira Code', monospace;
         }
     }
 }

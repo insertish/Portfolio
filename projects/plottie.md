@@ -5,6 +5,7 @@ updated: 2020-05-19T08:11:11Z
 featured: true
 name: Plottie.js
 description: Functional graphing library for the web.
+banner: /projects/plottie.png
 tags: functional graphing, javascript graphing, canvas
 languages: javascript, typescript
 type: library
