@@ -5,6 +5,13 @@
 
     &[data-card="true"] {
         border-radius: 4px 4px 0px 0px;
+        border-top: 1px solid #1112;
+        border-left: 1px solid #1112;
+        border-right: 1px solid #1112;
+
+        .project {
+            border-radius: 4px 4px 0px 0px;
+        }
     }
 
     &:hover {
@@ -15,10 +22,10 @@
 
 .project {
     width: 100%;
+    display: flex;
     padding-top: 50%;
     border-radius: 4px;
     background-size: contain !important;
-    display: flex;
 
     > div {
         width: 100%;
@@ -26,6 +33,7 @@
         position: relative;
 
         display: flex;
+        text-align: center;
         border-radius: 4px;
         align-items: center;
         justify-content: center;

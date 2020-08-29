@@ -14,7 +14,7 @@ export interface Project {
     tags: string,
     cover?: string,
     languages: string,
-    type: 'website' | 'app' | 'library' | 'game' | 'other',
+    type: 'website' | 'app' | 'library' | 'game' | 'service' | 'utility' | 'mod' | 'other',
 
     homepage?: string,
     repository?: string,

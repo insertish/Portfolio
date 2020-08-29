@@ -6,6 +6,13 @@
     &[data-style="mini"] {
         font-size: 0.7em;
     }
+    
+    &[data-style="large"] {
+        padding: 0.5em;
+        font-size: 2em;
+        border-radius: 4px;
+        background: #1111;
+    }
 
     a {
         border-bottom: 1px solid black;

@@ -6,7 +6,7 @@ featured: true
 name: Revolt
 description: Chat platform built with Rust.
 banner: /projects/revolt.png
-tags: React, chat platform, instant messaging
+tags: react, redux, chat platform, instant messaging
 languages: javascript, typescript, rust
 type: app
 homepage: https://revolt.chat

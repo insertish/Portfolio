@@ -2,7 +2,7 @@ import { ReactNode } from 'react';
 import styles from './Extra.module.scss';
 
 interface Props {
-    style?: 'default' | 'mini',
+    style?: 'default' | 'mini' | 'large',
     children?: ReactNode | ReactNode[]
 }
 

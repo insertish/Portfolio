@@ -1069,6 +1069,14 @@
   resolved "https://registry.yarnpkg.com/@next/react-refresh-utils/-/react-refresh-utils-9.5.2.tgz#5d92d8ad0f2bd79de2290614e74e5a12a0cda02b"
   integrity sha512-ch/16u3OVy/aIXJROwqXZjGw/tFMyG7qy2IGDA2RFjvQMtPyJJrklmwX2EcfH4+4spRI2MZKes2soI+0w2/MDQ==
 
+"@styled-icons/bootstrap@^10.18.0":
+  version "10.18.0"
+  resolved "https://registry.yarnpkg.com/@styled-icons/bootstrap/-/bootstrap-10.18.0.tgz#4fb7c4bc060b1ffd219bd0ad87f9e0c12474e5f6"
+  integrity sha512-tC4YwJx4rJKeSx98DEXoERzLWS9p66/2Kw00Ub4iFRLxFgLN/zyu9yQxIFj7WzYsjV+nLAxculK/Qb33tpOUsw==
+  dependencies:
+    "@babel/runtime" "^7.10.5"
+    "@styled-icons/styled-icon" "^10.6.0"
+
 "@styled-icons/boxicons-logos@^10.15.1":
   version "10.15.1"
   resolved "https://registry.yarnpkg.com/@styled-icons/boxicons-logos/-/boxicons-logos-10.15.1.tgz#2e40c6e21e2b3238f9d7eff4458c0e5f5fab2bb9"
@@ -1077,10 +1085,34 @@
     "@babel/runtime" "^7.10.5"
     "@styled-icons/styled-icon" "^10.6.0"
 
+"@styled-icons/boxicons-regular@^10.18.0":
+  version "10.18.0"
+  resolved "https://registry.yarnpkg.com/@styled-icons/boxicons-regular/-/boxicons-regular-10.18.0.tgz#7858c27a5461126b45b0de5d8fedb42eac3c4613"
+  integrity sha512-o/i+54HOUXCzmDyRI4fTVlR616QBYBH/rmZtLqZ4MTyRiBAB4WRFGu4X29b78euiJfNNOWXxyKZHyS81BuuFUA==
+  dependencies:
+    "@babel/runtime" "^7.10.5"
+    "@styled-icons/styled-icon" "^10.6.0"
+
+"@styled-icons/entypo@^10.18.0":
+  version "10.18.0"
+  resolved "https://registry.yarnpkg.com/@styled-icons/entypo/-/entypo-10.18.0.tgz#9d98e8a432215257cca9f7383cae28ce388b6800"
+  integrity sha512-FZdYzBiqXgas/c76eeCSWfEy6jpzfvucIXMgwsTDQioh7/x9qVmuyz5TVlghx2zWmtoz4hEnLIDD0Yzw1ajXWQ==
+  dependencies:
+    "@babel/runtime" "^7.10.5"
+    "@styled-icons/styled-icon" "^10.6.0"
+
 "@styled-icons/fa-brands@^10.18.0":
   version "10.18.0"
   resolved "https://registry.yarnpkg.com/@styled-icons/fa-brands/-/fa-brands-10.18.0.tgz#49d8fd2d25c4fb3e6f0c0ccca7de918d06ce04a5"
   integrity sha512-bYMT+3/GNcE0MR7pZVXn0CyWQRrijjQSXFaqlPG5qhT0Z8wwNYIgxTqfEPnQoxreheHgZ6rkAc/kl2Dxl98jzQ==
+  dependencies:
+    "@babel/runtime" "^7.10.5"
+    "@styled-icons/styled-icon" "^10.6.0"
+
+"@styled-icons/fa-solid@^10.18.0":
+  version "10.18.0"
+  resolved "https://registry.yarnpkg.com/@styled-icons/fa-solid/-/fa-solid-10.18.0.tgz#058900161ac0148e0ff389ac3424cd32e35abca5"
+  integrity sha512-lpBXAwymZiVbfwnUyKXgRL/qcc1VUUYJ6wOJueg6NyDOggvpTMhjlRs0mMF+9Zn/NhtCOrDf2tAW653smH11KQ==
   dependencies:
     "@babel/runtime" "^7.10.5"
     "@styled-icons/styled-icon" "^10.6.0"
