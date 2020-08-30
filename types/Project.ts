@@ -19,4 +19,6 @@ export interface Project {
     homepage?: string,
     repository?: string,
     library?: string,
+
+    related?: string,
 }
