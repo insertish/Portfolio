@@ -4,11 +4,12 @@ import { Project } from '../components/Project';
 import { Overline } from '../components/Overline';
 import { Container } from '../components/Container';
 
-import { Project as ProjectI } from '../types/Project';
-import { ProjectEntry } from '../components/ProjectCard';
-import { find_entries } from '../util/loader';
+import Head from 'next/head';
 import { Fragment } from 'react';
 import { Extra } from '../components/Extra';
+import { find_entries } from '../util/loader';
+import { Project as ProjectI } from '../types/Project';
+import { ProjectEntry } from '../components/ProjectCard';
 
 interface Props {
 	projects: ProjectI[]
@@ -70,6 +71,10 @@ export default function Projects(props: Props) {
 			page="projects"
 			title="Projects"
 		>
+			<Head>
+				<meta property="og:type" content="website" />
+				<meta property="og:description" content="My project mega list of (nearly) everything that I've ever made." />
+			</Head>
 			<Container>
 				<p>
 					I've made a lot of different things over the years, so I made a list of everything I've ever made (well almost everything). Some smaller and also some older forgotten projects will probably not be here.

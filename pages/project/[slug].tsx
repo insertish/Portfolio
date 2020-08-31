@@ -25,8 +25,12 @@ export default function Project({ meta, content }: Props) {
 			title={meta.name}
 		>
             <Head>
+				<meta property="og:type" content="article" />
                 <meta property="og:image" content={`https://insrt.uk/projects/${meta.slug}.png`} />
                 <meta property="og:description" content={meta.description} />
+                <meta property="og:article:published_time" content={ meta.started } />
+                { meta.updated && <meta property="og:article:modified_time" content={ meta.updated } /> }
+                <meta property="og:article:tag" content={ meta.tags } />
             </Head>
             <Container>
                 <div className={styles.header}>

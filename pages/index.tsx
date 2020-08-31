@@ -25,6 +25,7 @@ export default function Home(props: Props) {
 		>
 			<Head>
 				<meta property="og:type" content="website" />
+				<meta property="og:description" content="Software developer. This is my personal portfolio as well as somewhere where I can collect my thoughts and ideas." />
 			</Head>
 			<Container>
 				<p>

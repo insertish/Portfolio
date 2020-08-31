@@ -11,6 +11,7 @@ import { Post as PostI } from '../../types/Post';
 import { Markdown } from '../../components/Markdown';
 import { parse_entry } from '../../util/loader';
 import { Extra } from '../../components/Extra';
+import Head from 'next/head';
 
 interface Props {
     meta: PostI,
@@ -23,6 +24,14 @@ export default function Post({ meta, content }: Props) {
 			page="posts"
 			title={meta.title}
 		>
+            <Head>
+				<meta property="og:type" content="article" />
+                <meta property="og:description" content={ meta.description } />
+                <meta property="og:article:published_time" content={ meta.published } />
+                { meta.updated && <meta property="og:article:modified_time" content={ meta.updated } /> }
+                <meta property="og:article:author" content="Paul Makles" />
+                <meta property="og:article:tag" content={ meta.tags } />
+            </Head>
             <Container>
                 <h1>{meta.title}</h1>
                 <p className={styles.overline}>
