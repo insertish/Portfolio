@@ -33,7 +33,7 @@ export default function Post({ meta, content }: Props) {
                 <meta property="og:article:tag" content={ meta.tags } />
             </Head>
             <Container>
-                <h1>{meta.title}</h1>
+                <h1 className={styles.title}>{meta.title}</h1>
                 <p className={styles.overline}>
                     { meta.description } { meta.description && <span> &middot; </span> }
                     <time>{ dayjs(meta.timestamp).format('Do MMMM YYYY') }</time>
