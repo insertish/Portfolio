@@ -31,6 +31,7 @@ export default function Post({ meta, content }: Props) {
                 { meta.updated && <meta property="og:article:modified_time" content={ meta.updated } /> }
                 <meta property="og:article:author" content="Paul Makles" />
                 <meta property="og:article:tag" content={ meta.tags } />
+                { meta.cover && <meta property="og:image" content={ meta.cover } /> }
             </Head>
             <Container>
                 <h1 className={styles.title}>{meta.title}</h1>
