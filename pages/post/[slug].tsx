@@ -4,7 +4,6 @@ import { Container } from '../../components/Container';
 import styles from './[slug].module.scss';
 
 import dayjs from 'dayjs';
-import matter from 'gray-matter';
 import ReactUtterences from 'react-utterances'
 import { readFile, readdir } from 'fs/promises';
 import { Post as PostI } from '../../types/Post';
@@ -12,6 +11,7 @@ import { Markdown } from '../../components/Markdown';
 import { parse_entry } from '../../util/loader';
 import { Extra } from '../../components/Extra';
 import Head from 'next/head';
+import { Fragment } from 'react';
 
 interface Props {
     meta: PostI,
@@ -31,7 +31,12 @@ export default function Post({ meta, content }: Props) {
                 { meta.updated && <meta property="og:article:modified_time" content={ meta.updated } /> }
                 <meta property="og:article:author" content="Paul Makles" />
                 <meta property="og:article:tag" content={ meta.tags } />
-                { meta.cover && <meta property="og:image" content={ meta.cover } /> }
+                { meta.cover &&
+                    <Fragment>
+                        <meta name="twitter:card" content="summary_large_image" />
+                        <meta name="twitter:image" content={ meta.cover } />
+                    </Fragment>
+                }
             </Head>
             <Container>
                 <h1 className={styles.title}>{meta.title}</h1>

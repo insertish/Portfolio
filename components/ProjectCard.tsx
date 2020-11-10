@@ -1,4 +1,3 @@
-import Link from 'next/link';
 import { Project } from './Project';
 import styles from './ProjectCard.module.scss';
 import { TechnologyBadge, TechList } from './Badge';
