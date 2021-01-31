@@ -8,9 +8,12 @@ import { Container } from '../components/Container';
 import Head from 'next/head';
 import Link from 'next/link';
 import { Extra } from '../components/Extra';
-import { find_entries } from '../util/loader';
 import { Post as PostI } from '../types/Post';
+import { find_entries } from '../util/loader';
 import { Project as ProjectI } from '../types/Project';
+import { Discord } from '@styled-icons/fa-brands/Discord';
+import { Envelope } from '@styled-icons/boxicons-regular';
+import { Matrix } from '@styled-icons/simple-icons';
 
 interface Props {
 	posts: PostI[],
@@ -32,12 +35,12 @@ export default function Home(props: Props) {
 					Hi, welcome to my personal site, this is a sort of portfolio and place for me to collect all my work, take a look for yourself.
 				</p>
 				<Overline>contact me</Overline>
-				<p>
-					<ul>
-						<li>Message me on Discord: <code>insert#0751</code></li>
-						<li>Email me at <a href="mailto:me@insrt.uk">me@insrt.uk</a></li>
-					</ul>
-				</p>
+				<ul>
+					<li><Discord size={24} /> insert#0751</li>
+					<li><Envelope size={24} /> <a href="mailto:me@insrt.uk">me@insrt.uk</a></li>
+					<li><Matrix size={24} /> <a target="_blank" href="https://matrix.to/#/@paul:insrt.uk">@paul:insrt.uk</a></li>
+					<li><Matrix size={24} /> <a target="_blank" href="https://matrix.to/#/@insert:clustor.net">@insert:clustor.net</a></li>
+				</ul>
 				<Overline>recent posts</Overline>
 				{
 					props.posts.map(x =>

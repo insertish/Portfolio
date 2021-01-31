@@ -86,7 +86,7 @@ export function Navbar(props: Props) {
                 <div className={styles.actions}>
                     <Link href="/projects"><a data-active={props.page === 'projects'}>projects</a></Link>
                     <Link href="/posts"><a data-active={props.page === 'posts'}>posts</a></Link>
-                    <Link href="/commission"><a data-active={props.page === 'commission'}>commission</a></Link>
+                    {/*<Link href="/commission"><a data-active={props.page === 'commission'}>commission</a></Link>*/}
 					<span><a href="mailto:me@insrt.uk"><Mail size={20} /></a></span>
 					<span><a href="https://gitlab.insrt.uk" target="_blank"><Gitlab size={20} /></a></span>
                 </div>
