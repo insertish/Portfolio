@@ -27,7 +27,7 @@ export function Page(props: Props) {
                 { props.children }
             </main>
             <footer>
-                &copy; 2020 Paul Makles
+                &copy; { new Date().getFullYear() } Paul Makles
             </footer>
         </Fragment>
     )
