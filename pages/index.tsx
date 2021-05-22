@@ -38,7 +38,7 @@ export default function Home(props: Props) {
 				<ul>
 					<li><Discord size={24} /> insert#0751</li>
 					<li><Envelope size={24} /> <a href="mailto:me@insrt.uk">me@insrt.uk</a></li>
-					<li><Matrix size={24} /> <a target="_blank" href="https://matrix.to/#/@paul:insrt.uk">@paul:insrt.uk</a></li>
+					{/*<li><Matrix size={24} /> <a target="_blank" href="https://matrix.to/#/@paul:insrt.uk">@paul:insrt.uk</a></li>*/}
 					<li><Matrix size={24} /> <a target="_blank" href="https://matrix.to/#/@insert:clustor.net">@insert:clustor.net</a></li>
 				</ul>
 				<Overline>recent posts</Overline>
