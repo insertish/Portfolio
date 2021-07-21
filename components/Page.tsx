@@ -2,7 +2,7 @@ import Head from "next/head";
 import { Navbar } from "./Navbar";
 import { ReactNode, Fragment } from "react";
 
-export type PageSlug = 'index' | 'projects' | 'posts' | 'commission' | 'subpage';
+export type PageSlug = 'index' | 'projects' | 'posts' | 'commission' | 'donate' | 'subpage';
 
 interface Props {
     page: PageSlug,

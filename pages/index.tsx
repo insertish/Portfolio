@@ -36,9 +36,9 @@ export default function Home(props: Props) {
 				</p>
 				<Overline>contact me</Overline>
 				<ul>
+					<li><img src="https://app.revolt.chat/assets/logo.png" style={{ display: 'inline-block', width: 24, height: 24, borderRadius: '4px', verticalAlign: 'middle' }} /> <a target="_blank" href="https://app.revolt.chat/invite/Testers">@insert</a></li>
 					<li><Discord size={24} /> insert#0751</li>
 					<li><Envelope size={24} /> <a href="mailto:me@insrt.uk">me@insrt.uk</a></li>
-					{/*<li><Matrix size={24} /> <a target="_blank" href="https://matrix.to/#/@paul:insrt.uk">@paul:insrt.uk</a></li>*/}
 					<li><Matrix size={24} /> <a target="_blank" href="https://matrix.to/#/@insert:clustor.net">@insert:clustor.net</a></li>
 				</ul>
 				<Overline>recent posts</Overline>

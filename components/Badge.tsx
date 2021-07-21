@@ -40,7 +40,7 @@ import { Rust, ReactLogo, Sass } from '@styled-icons/fa-brands';
 import { WebAsset, Security } from '@styled-icons/material-outlined';
 import { KanbanFill, FileBinaryFill, FileEarmarkBinary, GearFill } from '@styled-icons/bootstrap';
 import { Library, Globe, GameController, HelpCircle, MusicalNotes, School } from '@styled-icons/ionicons-outline';
-import { Opengl, Javascript, Typescript, Minetest, NextDotJs, Discord, NodeDotJs, Jest, Redux, Mysql, Mongodb, Sqlite, Java, RollupDotJs, C, Cplusplus, Python, Electron, Webgl, Android, VueDotJs } from '@styled-icons/simple-icons';
+import { Opengl, Javascript, Typescript, Minetest, Nextdotjs, Discord, Nodedotjs, Jest, Redux, Mysql, Mongodb, Sqlite, Java, Rollupdotjs, C, Cplusplus, Python, Electron, Webgl, Android, Vuedotjs } from '@styled-icons/simple-icons';
 
 interface TechnologyProps {
     tech: string,
@@ -64,9 +64,9 @@ export function TechnologyBadge(props: TechnologyProps) {
         case 'opengl': return <Badge background="#ccc" color="#6486a2" mini={props.mini} text="OpenGL" icon={<Opengl size={size} />} />;
         case 'webgl': return <Badge background="#971319" mini={props.mini} text="WebGL" icon={<Webgl size={size} />} />;
         case 'react': return <Badge background="#20232a" color="#5bc9e7" mini={props.mini} text="React" icon={<ReactLogo size={size} />} />;
-        case 'next.js': return <Badge background="#ededed" color="black" mini={props.mini} text="Next.js" icon={<NextDotJs size={size} />} />;
+        case 'next.js': return <Badge background="#ededed" color="black" mini={props.mini} text="Next.js" icon={<Nextdotjs size={size} />} />;
         case 'minecraft': return <Badge background="#1c1c1c" color="#34aa2f" mini={props.mini} text="Minecraft" icon={<Minetest size={size} />} />;
-        case 'node.js': return <Badge background="#333333" color="#689f63" mini={props.mini} text="Node.js" icon={<NodeDotJs size={size} />} />;
+        case 'node.js': return <Badge background="#333333" color="#689f63" mini={props.mini} text="Node.js" icon={<Nodedotjs size={size} />} />;
         case 'discord': return <Badge background="#7289DA" mini={props.mini} text="Discord" icon={<Discord size={size} />} />;
         case 'bot': return <Badge mini={props.mini} text="Bot" icon={<Robot size={size} />} />;
         case 'ci': return <Badge mini={props.mini} text="CI" icon={<Robot size={size} />} />;
@@ -79,12 +79,12 @@ export function TechnologyBadge(props: TechnologyProps) {
         case 'mysql': return <Badge background="#df7610" mini={props.mini} text="MySQL" icon={<Mysql size={size} />} />;
         case 'mongodb': return <Badge background="#56b054" mini={props.mini} text="MongoDB" icon={<Mongodb size={size} />} />;
         case 'sqlite': return <Badge background="#003b57" mini={props.mini} text="SQLite" icon={<Sqlite size={size} />} />;
-        case 'rollup.js': return <Badge background="#f03334" mini={props.mini} text="rollup.js" icon={<RollupDotJs size={size} />} />;
+        case 'rollup.js': return <Badge background="#f03334" mini={props.mini} text="rollup.js" icon={<Rollupdotjs size={size} />} />;
         case 'cybersec': return <Badge mini={props.mini} text="Cyber Security" icon={<Security size={size} />} />;
         case 'lowlevel': return <Badge mini={props.mini} text="Low-level Programming" icon={<FileBinaryFill size={size} />} />;
         case 'electron': return <Badge background="#272a37" color="#272a37" mini={props.mini} text="Electron" icon={<Electron size={size} />} />;
         case 'android': return <Badge background="#3ed785" mini={props.mini} text="Android" icon={<Android size={size} />} />;
-        case 'vue.js': return <Badge background="#35495e" color="#41b883" mini={props.mini} text="Vue.js" icon={<VueDotJs size={size} />} />;
+        case 'vue.js': return <Badge background="#35495e" color="#41b883" mini={props.mini} text="Vue.js" icon={<Vuedotjs size={size} />} />;
         // Types
         case 'website': return <Badge mini={props.mini} text="Website" icon={<Globe size={size} />} />;
         case 'app': return <Badge mini={props.mini} text="App" icon={<WebAsset size={size} />} />;
