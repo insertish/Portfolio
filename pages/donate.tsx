@@ -41,12 +41,6 @@ export default function Commission(props: Props) {
 				<p>
 					You can send me crypto directly to my Coinbase wallet at <code>paulmakles@gmail.com</code> or you can ask me for a crypto address personally.
 				</p>
-				<Overline>referrals</Overline>
-				<ul>
-					<li><a href="https://m.do.co/c/9ac0bfb62833">100$ Digital Ocean credit</a></li>
-					<li><a href="https://www.coinbase.com/join/pmakles">Create a Coinbase account</a></li>
-					<li><a href="https://www.binance.com/en/register?ref=123323409">Create a Binance account</a></li>
-				</ul>
 			</Container>
 		</Page>
 	)
