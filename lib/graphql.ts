@@ -1,5 +1,5 @@
 import { ApolloClient, gql, InMemoryCache } from "@apollo/client";
-import { BlogPost } from "./types";
+import { BlogPost, Homelab } from "./types";
 
 const STRAPI_ENDPOINT = "https://strapi.insrt.uk";
 
@@ -79,6 +79,10 @@ export const getPost = (slug: string) =>
             },
         }));
 
+/**
+ * List all blog posts.
+ * @returns Blog posts
+ */
 export const listPosts = () =>
     client
         .query({
@@ -117,3 +121,24 @@ export const listPosts = () =>
                 },
             })),
         );
+
+/**
+ * Get homelab information
+ * @returns Homelab
+ */
+export const getHomelab = () =>
+    client
+        .query({
+            query: gql`
+                query {
+                    homelab {
+                        data {
+                            attributes {
+                                Content
+                            }
+                        }
+                    }
+                }
+            `,
+        })
+        .then(({ data }) => data.homelab.data.attributes as Homelab);

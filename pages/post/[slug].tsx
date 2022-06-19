@@ -5,7 +5,7 @@ import { Container } from "../../components/layout/Container";
 import { getPath, getPost } from "../../lib/graphql";
 import { BlogPost } from "../../lib/types";
 import readingTime from "reading-time";
-import { TextBlock } from "../../components/display/TextBlock";
+import { RenderContent, TextBlock } from "../../components/display/TextBlock";
 
 import dayjs from "dayjs";
 
@@ -17,8 +17,6 @@ const Posts: NextPage<{ post: BlogPost; reading: string }> = ({
     post,
     reading,
 }) => {
-    useHighlighter("#content pre > code", "bash");
-
     return (
         <>
             <Container>
@@ -50,11 +48,7 @@ const Posts: NextPage<{ post: BlogPost; reading: string }> = ({
                     <h6>{post.attributes.Cover.caption}</h6>
                 </>
             )}
-            <TextBlock
-                id="content"
-                verticalPadding="16px"
-                dangerouslySetInnerHTML={{ __html: post.attributes.Content! }}
-            />
+            <RenderContent content={post.attributes.Content!} />
         </>
     );
 };

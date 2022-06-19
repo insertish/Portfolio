@@ -11,3 +11,7 @@ export interface BlogPost {
         };
     };
 }
+
+export interface Homelab {
+    Content: string;
+}
