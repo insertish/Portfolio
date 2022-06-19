@@ -1,5 +1,3 @@
-const { withPlausibleProxy } = require("next-plausible");
-
 /** @type {import('next').NextConfig} */
 const nextConfig = {
     reactStrictMode: true,
@@ -9,10 +7,19 @@ const nextConfig = {
     compiler: {
         styledComponents: true,
     },
+    async rewrites() {
+        return [
+            {
+                source: "/js/p.js",
+                destination:
+                    "https://plausible.insrt.uk/js/script.outbound-links.js",
+            },
+            {
+                source: "/api/hello",
+                destination: "https://plausible.insrt.uk/api/event",
+            },
+        ];
+    },
 };
 
-module.exports = withPlausibleProxy({
-    subdirectory: "hello",
-    scriptName: "t",
-    customDomain: "http://plausible.insrt.uk",
-})(nextConfig);
+module.exports = nextConfig;

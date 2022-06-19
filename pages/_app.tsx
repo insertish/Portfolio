@@ -1,15 +1,17 @@
 import "../styles/globals.scss";
 import type { AppProps } from "next/app";
 import CommonLayout from "../layouts/CommonLayout";
-import PlausibleProvider from "next-plausible";
 
 function MyApp({ Component, pageProps }: AppProps) {
     return (
-        <PlausibleProvider domain="insrt.uk">
-            <CommonLayout>
-                <Component {...pageProps} />
-            </CommonLayout>
-        </PlausibleProvider>
+        <CommonLayout>
+            <Component {...pageProps} />
+            <script
+                defer
+                data-domain="insrt.uk"
+                data-api="/api/hello"
+                src="/js/p.js"></script>
+        </CommonLayout>
     );
 }
 
