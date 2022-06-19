@@ -63,6 +63,7 @@ export const getPost = (slug: string) =>
                                     }
                                 }
                             }
+                            Tags
                         }
                     }
                 }
@@ -98,6 +99,8 @@ export const listPosts = () =>
                                         }
                                     }
                                 }
+                                Tags
+                                Subtitle
                             }
                         }
                     }

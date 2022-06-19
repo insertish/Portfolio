@@ -45,9 +45,21 @@ h6 {
 a {
     color: inherit;
     text-decoration: none;
+}
+
+main a {
     border-bottom: 1px solid black;
 
-    &[data-active="true"] {
-        color: rgb(97, 97, 97);
+    $hover: rgb(120, 120, 120);
+    $active: rgb(97, 97, 97);
+
+    &:hover {
+        color: $hover;
+        border-bottom-color: $hover;
+    }
+
+    &:active {
+        color: $active;
+        border-bottom-color: $active;
     }
 }
