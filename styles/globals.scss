@@ -1,0 +1,21 @@
+@import "@fontsource/quicksand";
+@import "@fontsource/open-sans";
+@import "./elements.scss";
+
+@import "highlight.js/styles/github-dark.css";
+
+html,
+body {
+    padding: 0;
+    margin: 0;
+    font-family: "Quicksand", sans-serif;
+}
+
+a {
+    color: inherit;
+    text-decoration: none;
+}
+
+* {
+    box-sizing: border-box;
+}

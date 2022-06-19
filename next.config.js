@@ -1,6 +1,12 @@
 /** @type {import('next').NextConfig} */
 const nextConfig = {
-  reactStrictMode: true,
-}
+    reactStrictMode: true,
+    images: {
+        domains: ["strapi.insrt.uk"],
+    },
+    compiler: {
+        styledComponents: true,
+    },
+};
 
-module.exports = nextConfig
+module.exports = nextConfig;

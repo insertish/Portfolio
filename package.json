@@ -10,18 +10,28 @@
     },
     "dependencies": {
         "@apollo/client": "^3.6.8",
+        "@fontsource/open-sans": "^4.5.10",
+        "@fontsource/quicksand": "^4.5.9",
+        "@types/markdown-it": "^12.2.3",
+        "dayjs": "^1.11.3",
         "graphql": "^16.5.0",
+        "highlight.js": "^11.5.1",
+        "markdown-it": "^13.0.1",
+        "markdown-it-github-headings": "^2.0.1",
         "next": "12.1.6",
         "prettier": "^2.7.1",
-        "qs": "^6.10.5",
         "react": "18.2.0",
-        "react-dom": "18.2.0"
+        "react-dom": "18.2.0",
+        "reading-time": "^1.5.0",
+        "sass": "^1.52.3",
+        "styled-components": "^5.3.5"
     },
     "devDependencies": {
         "@types/node": "18.0.0",
         "@types/qs": "^6.9.7",
         "@types/react": "18.0.14",
         "@types/react-dom": "18.0.5",
+        "@types/styled-components": "^5.1.25",
         "eslint": "8.18.0",
         "eslint-config-next": "12.1.6",
         "typescript": "4.7.4"

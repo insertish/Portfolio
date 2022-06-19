@@ -1,8 +1,13 @@
-import "../styles/globals.css";
+import "../styles/globals.scss";
 import type { AppProps } from "next/app";
+import CommonLayout from "../layouts/CommonLayout";
 
 function MyApp({ Component, pageProps }: AppProps) {
-    return <Component {...pageProps} />;
+    return (
+        <CommonLayout>
+            <Component {...pageProps} />
+        </CommonLayout>
+    );
 }
 
 export default MyApp;

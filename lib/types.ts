@@ -5,5 +5,9 @@ export interface BlogPost {
         Slug: string;
         Content?: string;
         Date?: string;
+        Cover?: {
+            url: string;
+            caption: string;
+        };
     };
 }
