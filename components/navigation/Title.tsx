@@ -12,14 +12,22 @@ const Blink = styled.span`
     animation: ${blink} 1.3s cubic-bezier(0.65, 0.16, 0.92, -0.35) infinite;
 `;
 
+const Home = styled.span`
+    font-size: 0.85em;
+    padding-right: 0.2em;
+`;
+
 const Base = styled.h1`
     margin: 0;
     flex-grow: 1;
     font-size: 2.4em;
     font-weight: 700;
 
-    display: flex;
-    flex-direction: row;
+    a {
+        display: flex;
+        align-items: center;
+        flex-direction: row;
+    }
 `;
 
 const intervals: number[] = [];
@@ -86,7 +94,7 @@ export default function Title() {
             onMouseLeave={() => animateTo("insrt")}>
             <Link href="/">
                 <a>
-                    &gt;
+                    <Home>~&gt;</Home>
                     {text}
                     <Blink>_</Blink>
                 </a>

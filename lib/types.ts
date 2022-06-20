@@ -9,6 +9,7 @@ export interface BlogPost {
             url: string;
             caption: string;
         };
+        Subtitle?: string;
     };
 }
 

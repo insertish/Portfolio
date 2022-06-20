@@ -25,7 +25,7 @@ function mapCover(v: any): BlogPost["attributes"]["Cover"] | null {
         if (typeof root.formats === "string") {
             url = root.formats;
         } else {
-            url = root.formats.thumbnail.url;
+            url = root.formats.medium.url;
         }
 
         return {
