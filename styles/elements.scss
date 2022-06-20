@@ -63,3 +63,26 @@ main a {
         border-bottom-color: $active;
     }
 }
+
+/** Tables */
+table {
+    border-collapse: collapse;
+
+    td,
+    th {
+        padding: 8px;
+        border: 1px solid gray;
+    }
+
+    th {
+        background: #ccc;
+    }
+
+    tr:nth-child(odd) {
+        background: #f0f0f0;
+    }
+
+    tr:nth-child(even) {
+        background: #fcfcfc;
+    }
+}

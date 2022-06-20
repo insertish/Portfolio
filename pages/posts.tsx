@@ -18,7 +18,7 @@ const Posts: NextPage<{ posts: BlogPost[] }> = ({ posts }) => {
             <h1>Blog Posts</h1>
             <List>
                 {posts.map((post) => (
-                    <Card key={post.id} post={post} />
+                    <Card key={post.Slug} post={post} />
                 ))}
             </List>
         </Container>

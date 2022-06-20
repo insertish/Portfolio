@@ -51,16 +51,12 @@ const Base = styled.a<{ cover?: string }>`
  */
 export default function Card({ post }: { post: BlogPost }) {
     return (
-        <Base
-            href={`/post/${post.attributes.Slug}`}
-            cover={post.attributes.Cover?.url}>
+        <Base href={`/post/${post.Slug}`} cover={post.Cover?.url}>
             <div>
-                <h3>{post.attributes.Title}</h3>
+                <h3>{post.Title}</h3>
                 <span>
-                    {dayjs(post.attributes.Date).fromNow()}{" "}
-                    {post.attributes.Subtitle ? (
-                        <> &middot; {post.attributes.Subtitle}</>
-                    ) : undefined}
+                    {dayjs(post.Date).fromNow()}{" "}
+                    {post.Subtitle ? <> &middot; {post.Subtitle}</> : undefined}
                 </span>
             </div>
         </Base>

@@ -21,15 +21,13 @@ const Posts: NextPage<{ post: BlogPost; reading: string }> = ({
         <>
             <Container>
                 <Backtrack text="Read other posts" href="/posts" />
-                <h1>{post.attributes.Title}</h1>
+                <h1>{post.Title}</h1>
                 <h5>
                     {reading} &middot;{" "}
-                    <time>
-                        {dayjs(post.attributes.Date).format("Do MMMM YYYY")}
-                    </time>
+                    <time>{dayjs(post.Date).format("Do MMMM YYYY")}</time>
                 </h5>
             </Container>
-            {post.attributes.Cover && (
+            {post.Cover && (
                 <>
                     <div
                         style={{
@@ -39,16 +37,16 @@ const Posts: NextPage<{ post: BlogPost; reading: string }> = ({
                             userSelect: "none",
                         }}>
                         <Image
-                            src={getPath(post.attributes.Cover.url)}
-                            alt={post.attributes.Cover.caption}
+                            src={getPath(post.Cover.url)}
+                            alt={post.Cover.caption}
                             objectFit="cover"
                             layout="fill"
                         />
                     </div>
-                    <h6>{post.attributes.Cover.caption}</h6>
+                    <h6>{post.Cover.caption}</h6>
                 </>
             )}
-            <RenderContent content={post.attributes.Content!} />
+            <RenderContent content={post.Content!} />
         </>
     );
 };
@@ -57,7 +55,7 @@ export default Posts;
 
 export const getServerSideProps: GetServerSideProps = async (context) => {
     const post = await getPost(context.query.slug as string);
-    const reading = readingTime(post?.attributes.Content ?? "").text;
+    const reading = readingTime(post?.Content ?? "").text;
 
     return {
         props: {

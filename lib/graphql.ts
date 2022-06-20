@@ -1,5 +1,5 @@
 import { ApolloClient, gql, InMemoryCache } from "@apollo/client";
-import { BlogPost, Homelab } from "./types";
+import { BlogPost, Homelab, Project } from "./types";
 
 const STRAPI_ENDPOINT = "https://strapi.insrt.uk";
 
@@ -17,7 +17,7 @@ export default client;
 /**
  * Map image cover property
  */
-function mapCover(v: any): BlogPost["attributes"]["Cover"] | null {
+function mapCover(v: any): BlogPost["Cover"] | null {
     if (v?.data?.attributes) {
         const root = v.data.attributes;
 
@@ -49,7 +49,6 @@ export const getPost = (slug: string) =>
             query {
                 posts(filters: { Slug: { eq: "${slug}" } }) {
                     data {
-                        id
                         attributes {
                             Title
                             Content
@@ -70,13 +69,10 @@ export const getPost = (slug: string) =>
             }
         `,
         })
-        .then(({ data }) => data.posts.data[0] as BlogPost)
+        .then(({ data }) => data.posts.data[0].attributes as BlogPost)
         .then((post) => ({
             ...post,
-            attributes: {
-                ...post.attributes,
-                Cover: mapCover(post.attributes.Cover),
-            },
+            Cover: mapCover(post.Cover),
         }));
 
 /**
@@ -90,7 +86,6 @@ export const listPosts = () =>
                 query {
                     posts(sort: "id:desc") {
                         data {
-                            id
                             attributes {
                                 Title
                                 Slug
@@ -111,16 +106,86 @@ export const listPosts = () =>
                 }
             `,
         })
-        .then(({ data }) => data.posts.data as BlogPost[])
+        .then(({ data }) => data.posts.data as { attributes: any }[])
         .then((posts) =>
-            posts.map((post) => ({
-                ...post,
-                attributes: {
-                    ...post.attributes,
-                    Cover: mapCover(post.attributes.Cover),
-                },
-            })),
+            posts
+                .map((post) => post.attributes as BlogPost)
+                .map((post) => ({
+                    ...post,
+                    Cover: mapCover(post.Cover),
+                })),
         );
+
+/**
+ * List all projects.
+ * @returns Projects
+ */
+export const listProjects = (options?: {
+    ignoreHidden?: boolean;
+    featured?: boolean;
+    offset?: number;
+    limit?: number;
+}) =>
+    client
+        .query({
+            query: gql`
+                query {
+                    projects(
+                        sort: ["ComputedTimestamp:desc"]
+                        filters: {
+                            ${options?.featured ? "Featured: { eq: true }" : ""}
+                            ${
+                                options?.ignoreHidden
+                                    ? "Hidden: { eq: false }"
+                                    : ""
+                            }
+                        }
+                        pagination: {
+                            start: ${options?.offset ?? 0}
+                            limit: ${options?.limit ?? 25}
+                        }
+                    )
+                    {
+                        data {
+                            attributes {
+                                Slug
+                                Name
+                                Description
+                                Cover {
+                                    data {
+                                        attributes {
+                                            formats
+                                            caption
+                                        }
+                                    }
+                                }
+                                Started
+                                Updated
+                                Featured
+                            }
+                        }
+                        meta {
+                            pagination {
+                                total
+                            }
+                        }
+                    }
+                }
+            `,
+        })
+        .then(({ data }) => ({
+            total: data.projects.meta.pagination.total,
+            projects: (data.projects.data as { attributes: any }[])
+                .map((project) => project.attributes as Project)
+                .map((project) => ({
+                    ...project,
+                    Cover: mapCover(project.Cover),
+                    timestamp: +new Date(
+                        project.Updated ?? project.Started ?? 0,
+                    ),
+                }))
+                .sort((a, b) => b.timestamp - a.timestamp),
+        }));
 
 /**
  * Get homelab information

@@ -4,6 +4,12 @@ import { Container } from "../layout/Container";
 
 export const TextBlock = styled(Container)`
     font-family: "Open Sans", sans-serif;
+
+    pre code {
+        // border: 1px solid #bbb;
+        border-radius: 6px;
+        background: #fafafa;
+    }
 `;
 
 export function RenderContent({ content }: { content: string }) {
