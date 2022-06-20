@@ -117,10 +117,58 @@ export const listPosts = () =>
         );
 
 /**
+ * Fetch a project by a given slug.
+ * @param slug Slug
+ * @returns Project
+ */
+export const getProject = (slug: string) =>
+    client
+        .query({
+            query: gql`
+                    query {
+                        projects(filters: { Slug: { eq: "${slug}" } }) {
+                            data {
+                                attributes {
+                                    Slug
+                                    Name
+                                    Description
+                                    Cover {
+                                        data {
+                                            attributes {
+                                                formats
+                                                caption
+                                            }
+                                        }
+                                    }
+                                    Started
+                                    Updated
+                                    Featured
+                                    Tags
+                                    Languages
+                                    Type
+                                    Website
+                                    Repository
+                                    Library
+                                    Content
+                                    README
+                                }
+                            }
+                        }
+                    }
+                `,
+        })
+        .then(({ data }) => data.projects.data[0].attributes as Project)
+        .then((post) => ({
+            ...post,
+            Cover: mapCover(post.Cover),
+        }));
+
+/**
  * List all projects.
  * @returns Projects
  */
 export const listProjects = (options?: {
+    filterWithContent?: boolean;
     ignoreHidden?: boolean;
     featured?: boolean;
     offset?: number;
@@ -137,6 +185,11 @@ export const listProjects = (options?: {
                             ${
                                 options?.ignoreHidden
                                     ? "Hidden: { eq: false }"
+                                    : ""
+                            }
+                            ${
+                                options?.filterWithContent
+                                    ? 'Content: { ne: "" }'
                                     : ""
                             }
                         }
@@ -177,14 +230,17 @@ export const listProjects = (options?: {
             total: data.projects.meta.pagination.total,
             projects: (data.projects.data as { attributes: any }[])
                 .map((project) => project.attributes as Project)
-                .map((project) => ({
-                    ...project,
-                    Cover: mapCover(project.Cover),
-                    timestamp: +new Date(
-                        project.Updated ?? project.Started ?? 0,
-                    ),
-                }))
-                .sort((a, b) => b.timestamp - a.timestamp),
+                .map(
+                    (project) =>
+                        ({
+                            ...project,
+                            Cover: mapCover(project.Cover),
+                            timestamp: +new Date(
+                                project.Updated ?? project.Started ?? 0,
+                            ),
+                        } as Project),
+                )
+                .sort((a, b) => b.timestamp! - a.timestamp!),
         }));
 
 /**

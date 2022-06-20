@@ -5,7 +5,7 @@ import { Container } from "../../components/layout/Container";
 import { getPath, getPost } from "../../lib/graphql";
 import { BlogPost } from "../../lib/types";
 import readingTime from "reading-time";
-import { RenderContent, TextBlock } from "../../components/display/TextBlock";
+import { RenderContent } from "../../components/display/TextBlock";
 
 import dayjs from "dayjs";
 

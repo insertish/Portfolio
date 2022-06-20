@@ -1,5 +1,6 @@
 import type { NextPage } from "next";
 import { Container } from "../components/layout/Container";
+import Card from "../components/pages/projects/Card";
 import { listProjects } from "../lib/graphql";
 
 const Projects: NextPage<Awaited<ReturnType<typeof listProjects>>> = ({
@@ -9,10 +10,8 @@ const Projects: NextPage<Awaited<ReturnType<typeof listProjects>>> = ({
     return (
         <Container>
             <h1>Projects</h1>
-            {projects.map((x) => (
-                <div key={x.Slug}>
-                    <a>{x.Name}</a>
-                </div>
+            {projects.map((project) => (
+                <Card key={project.Slug} project={project} />
             ))}
             Total Projects: {total}
         </Container>
@@ -23,6 +22,8 @@ export default Projects;
 
 export async function getServerSideProps() {
     return {
-        props: await listProjects(),
+        props: await listProjects({
+            filterWithContent: true,
+        }),
     };
 }
