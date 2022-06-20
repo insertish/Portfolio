@@ -23,8 +23,6 @@ export default Projects;
 
 export async function getServerSideProps() {
     return {
-        props: await listProjects({
-            limit: 100,
-        }),
+        props: await listProjects(),
     };
 }
