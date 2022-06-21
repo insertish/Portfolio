@@ -39,7 +39,7 @@ const Donate: NextPage<{ donate: string }> = ({ donate }) => {
 
 export default Donate;
 
-export async function getServerSideProps() {
+export async function getStaticProps() {
     const donate = await getDonation();
 
     return {

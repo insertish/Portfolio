@@ -27,7 +27,7 @@ const Homelab: NextPage<{ homelab: Homelab }> = ({ homelab }) => {
 
 export default Homelab;
 
-export async function getServerSideProps() {
+export async function getStaticProps() {
     const homelab = await getHomelab();
 
     return {

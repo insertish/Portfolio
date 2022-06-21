@@ -39,7 +39,7 @@ const Posts: NextPage<{ posts: BlogPost[] }> = ({ posts }) => {
 
 export default Posts;
 
-export async function getServerSideProps() {
+export async function getStaticProps() {
     const posts = await listPosts();
 
     return {

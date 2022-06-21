@@ -1,7 +1,7 @@
-import type { GetServerSideProps, NextPage } from "next";
+import type { GetStaticPaths, GetStaticProps, NextPage } from "next";
 import { Backtrack } from "../../components/display/Backtrack";
 import { Container } from "../../components/layout/Container";
-import { getPath, getProject } from "../../lib/graphql";
+import { getPath, getProject, listProjects } from "../../lib/graphql";
 import { Project } from "../../lib/types";
 import { RenderContent } from "../../components/display/TextBlock";
 import Cover from "../../components/display/Cover";
@@ -112,12 +112,21 @@ const Projects: NextPage<{ project: Project; reading: string }> = ({
 
 export default Projects;
 
-export const getServerSideProps: GetServerSideProps = async (context) => {
-    const project = await getProject(context.query.slug as string);
+export const getStaticProps: GetStaticProps = async (context) => {
+    const project = await getProject(context.params!.slug as string);
 
     return {
         props: {
             project,
         },
+    };
+};
+
+export const getStaticPaths: GetStaticPaths = async () => {
+    const { projects } = await listProjects({ limit: 20 });
+
+    return {
+        paths: [{ params: { slug: projects.map(({ Slug }) => Slug) } }],
+        fallback: "blocking",
     };
 };

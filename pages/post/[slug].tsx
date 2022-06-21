@@ -1,7 +1,7 @@
-import type { GetServerSideProps, NextPage } from "next";
+import type { GetStaticPaths, GetStaticProps, NextPage } from "next";
 import { Backtrack } from "../../components/display/Backtrack";
 import { Container } from "../../components/layout/Container";
-import { getPath, getPost } from "../../lib/graphql";
+import { getPath, getPost, listPosts } from "../../lib/graphql";
 import { BlogPost } from "../../lib/types";
 import readingTime from "reading-time";
 import { RenderContent } from "../../components/display/TextBlock";
@@ -64,8 +64,8 @@ const Posts: NextPage<{ post: BlogPost; reading: string }> = ({
 
 export default Posts;
 
-export const getServerSideProps: GetServerSideProps = async (context) => {
-    const post = await getPost(context.query.slug as string);
+export const getStaticProps: GetStaticProps = async (context) => {
+    const post = await getPost(context.params!.slug as string);
     const reading = readingTime(post?.Content ?? "").text;
 
     return {
@@ -73,5 +73,14 @@ export const getServerSideProps: GetServerSideProps = async (context) => {
             post,
             reading,
         },
+    };
+};
+
+export const getStaticPaths: GetStaticPaths = async () => {
+    const posts = await listPosts();
+
+    return {
+        paths: [{ params: { slug: posts.map(({ Slug }) => Slug) } }],
+        fallback: "blocking",
     };
 };

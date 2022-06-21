@@ -67,7 +67,7 @@ const Projects: NextPage<Awaited<ReturnType<typeof listProjects>>> = ({
 
 export default Projects;
 
-export async function getServerSideProps() {
+export async function getStaticProps() {
     return {
         props: await listProjects({
             // filterWithContent: true,
