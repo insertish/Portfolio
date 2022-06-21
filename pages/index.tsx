@@ -3,8 +3,6 @@ import Head from "next/head";
 import styled, { css } from "styled-components";
 import { Container } from "../components/layout/Container";
 import dayjs from "dayjs";
-import { Contact } from "../components/pages/index/Contact";
-import Image from "next/image";
 import { ChevronRight, Mail } from "@styled-icons/entypo";
 import {
     Hero,
@@ -12,6 +10,7 @@ import {
     HeroHack,
     HeroLayout,
 } from "../components/pages/index/Hero";
+import Contacts from "../components/pages/index/Contacts";
 
 const Tagline = styled.h2<{ top?: boolean; bottom?: boolean }>`
     ${(props) =>
@@ -25,13 +24,6 @@ const Tagline = styled.h2<{ top?: boolean; bottom?: boolean }>`
         css`
             margin-top: 8px;
         `}
-`;
-
-const ContactDetails = styled.div`
-    margin: 4em 0;
-    display: grid;
-    grid-gap: 4px;
-    grid-template-columns: repeat(auto-fill, minmax(150px, 1fr));
 `;
 
 const Whitespace = styled.div`
@@ -65,38 +57,7 @@ const Home: NextPage = () => {
                     }
                 </Tagline>
 
-                <ContactDetails>
-                    <Contact fg="#ff4654" bg="#101823">
-                        <Image
-                            width="24px"
-                            height="24px"
-                            src="/revolt.svg"
-                            alt="Revolt Chat"
-                        />
-                        Revolt
-                    </Contact>
-                    <Contact fg="white" bg="#7289DA">
-                        <Image
-                            width="24px"
-                            height="24px"
-                            src="/discord.svg"
-                            alt="Discord App"
-                        />
-                        Discord
-                    </Contact>
-                    <Contact fg="white" bg="#171515">
-                        <Image
-                            width="24px"
-                            height="24px"
-                            src="/github.svg"
-                            alt="GitHub"
-                        />
-                        GitHub
-                    </Contact>
-                    <Contact bg="#ddd">
-                        <Mail size={24} /> Email
-                    </Contact>
-                </ContactDetails>
+                <Contacts />
 
                 <Whitespace />
 
