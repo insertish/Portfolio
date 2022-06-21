@@ -93,3 +93,32 @@ table {
         background: #fcfcfc;
     }
 }
+
+/** Emphasis */
+em {
+    margin: 0.1em;
+    color: white;
+    padding: 0.3em 0.4em;
+    font-style: normal;
+    border-radius: 0.3em;
+    background: black;
+    flex-direction: row;
+    align-items: center;
+    display: inline-flex;
+
+    svg {
+        margin-right: 0.4em;
+    }
+
+    &[data-mini="true"] {
+        padding: 0.4em;
+
+        span {
+            display: none;
+        }
+
+        svg {
+            margin: 0;
+        }
+    }
+}

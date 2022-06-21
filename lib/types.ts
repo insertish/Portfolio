@@ -13,8 +13,6 @@ export interface BlogPost {
 }
 
 export interface Project {
-    timestamp?: number;
-
     Slug: string;
     Name: string;
     Description?: string;

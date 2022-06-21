@@ -1,21 +1,13 @@
 import styled, { css } from "styled-components";
-import { getPath } from "../../../lib/graphql";
 import { BlogPost } from "../../../lib/types";
+import { CardBase } from "../../display/Card";
 
 import dayjs from "dayjs";
 import relativeTime from "dayjs/plugin/relativeTime";
 dayjs.extend(relativeTime);
 
-const Base = styled.a<{ cover?: string }>`
-    border: none;
+const Base = styled(CardBase)<{ cover?: string }>`
     height: 80px;
-    display: flex;
-    overflow: hidden;
-    border-radius: 6px;
-
-    color: black;
-    background: #eee;
-    transition: 0.1s ease filter;
 
     div {
         padding: 1em;
@@ -26,21 +18,9 @@ const Base = styled.a<{ cover?: string }>`
         margin: 0;
     }
 
-    &:hover {
-        color: ${(props) => (props.cover ? "white" : "black")};
-        filter: brightness(0.85);
-    }
-
-    &:active {
-        filter: brightness(0.75);
-    }
-
     ${(props) =>
         props.cover &&
         css`
-            color: white;
-            background-size: cover !important;
-            background-position: center !important;
             background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)),
                 url("${props.cover}");
         `}

@@ -217,6 +217,9 @@ export const listProjects = (options?: {
                                 Started
                                 Updated
                                 Featured
+                                Type
+                                Languages
+                                Tags
                             }
                         }
                         meta {
@@ -237,12 +240,8 @@ export const listProjects = (options?: {
                         ({
                             ...project,
                             Cover: mapCover(project.Cover),
-                            timestamp: +new Date(
-                                project.Updated ?? project.Started ?? 0,
-                            ),
                         } as Project),
-                )
-                .sort((a, b) => b.timestamp! - a.timestamp!),
+                ),
         }));
 
 /**
