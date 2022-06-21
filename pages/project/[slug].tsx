@@ -33,14 +33,18 @@ const Projects: NextPage<{ project: Project; reading: string }> = ({
                             property="twitter:image"
                             content={getPath(project.Cover.url)}
                         />
-                        <meta
-                            property="og:image:width"
-                            content={project.Cover.width.toString()}
-                        />
-                        <meta
-                            property="og:image:height"
-                            content={project.Cover.height.toString()}
-                        />
+                        {project.Cover.width && (
+                            <meta
+                                property="og:image:width"
+                                content={project.Cover.width.toString()}
+                            />
+                        )}
+                        {project.Cover.height && (
+                            <meta
+                                property="og:image:height"
+                                content={project.Cover.height.toString()}
+                            />
+                        )}
                     </>
                 )}
             </Head>
@@ -127,6 +131,6 @@ export const getStaticPaths: GetStaticPaths = async () => {
 
     return {
         paths: projects.map(({ Slug }) => ({ params: { slug: Slug } })),
-        fallback: "blocking",
+        fallback: false,
     };
 };
