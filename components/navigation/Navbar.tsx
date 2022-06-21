@@ -7,7 +7,7 @@ import Title from "./Title";
 
 const Base = styled.div`
     display: flex;
-    padding-top: 16px;
+    margin: 32px 0;
     align-items: center;
 
     a {
