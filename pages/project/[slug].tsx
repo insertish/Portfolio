@@ -78,9 +78,6 @@ const Projects: NextPage<{ project: Project; reading: string }> = ({
             <Container>
                 <RenderContent content={project.Content!} />
             </Container>
-            <pre>
-                <code>{JSON.stringify(project, null, "\t")}</code>
-            </pre>
         </>
     );
 };

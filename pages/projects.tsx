@@ -18,12 +18,27 @@ const Projects: NextPage<Awaited<ReturnType<typeof listProjects>>> = ({
     return (
         <Container>
             <h1>Projects</h1>
+
+            <div
+                style={{
+                    padding: "1em",
+                    fontSize: "2em",
+                    margin: "1em 0",
+                    borderRadius: "12px",
+                    backgroundColor: "rgba(0, 0, 0, 0.2)",
+                }}>
+                This list is currently about 2 years out of date,
+                <br />
+                <small>
+                    {"I'm slowly working on getting everything recent in."}
+                </small>
+            </div>
+
             <Grid>
                 {projects.map((project) => (
                     <Card key={project.Slug} project={project} />
                 ))}
             </Grid>
-            Total Projects: {total}
         </Container>
     );
 };
