@@ -17,7 +17,7 @@ const Projects: NextPage<{ project: Project; reading: string }> = ({
     project,
 }) => {
     return (
-        <>
+        <main>
             <Head>
                 <title>{project.Name} – insrt.uk</title>
                 <meta property="og:title" content={project.Name} />
@@ -106,7 +106,7 @@ const Projects: NextPage<{ project: Project; reading: string }> = ({
             <Container>
                 <RenderContent content={project.Content!} />
             </Container>
-        </>
+        </main>
     );
 };
 

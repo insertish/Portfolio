@@ -7,19 +7,21 @@ import { Homelab } from "../lib/types";
 
 const Homelab: NextPage<{ homelab: Homelab }> = ({ homelab }) => {
     return (
-        <Container>
-            <Head>
-                <title>Homelab – insrt.uk</title>
-                <meta property="og:title" content="Homelab" />
-                <meta
-                    property="og:description"
-                    content="Information about my home infrastructure."
-                />
-            </Head>
+        <main>
+            <Container>
+                <Head>
+                    <title>Homelab – insrt.uk</title>
+                    <meta property="og:title" content="Homelab" />
+                    <meta
+                        property="og:description"
+                        content="Information about my home infrastructure."
+                    />
+                </Head>
 
-            <h1>Homelab</h1>
-            <RenderContent content={homelab.Content} />
-        </Container>
+                <h1>Homelab</h1>
+                <RenderContent content={homelab.Content} />
+            </Container>
+        </main>
     );
 };
 

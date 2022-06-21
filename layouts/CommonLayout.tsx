@@ -1,5 +1,6 @@
 import Navbar from "../components/navigation/Navbar";
 import Footer from "../components/navigation/Footer";
+import Head from "next/head";
 
 export default function CommonLayout({
     children,
@@ -8,8 +9,14 @@ export default function CommonLayout({
 }) {
     return (
         <>
+            <Head>
+                <meta
+                    property="og:site_name"
+                    content="Paul Makles – insrt.uk"
+                />
+            </Head>
             <Navbar />
-            <main>{children}</main>
+            {children}
             <Footer />
         </>
     );

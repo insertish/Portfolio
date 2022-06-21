@@ -19,19 +19,21 @@ const Donate: NextPage<{ donate: string }> = ({ donate }) => {
     }
 
     return (
-        <Container>
-            <Head>
-                <title>Donate – insrt.uk</title>
-                <meta property="og:title" content="Donate" />
-                <meta
-                    property="og:description"
-                    content="Help support my work on open source projects."
-                />
-            </Head>
+        <main>
+            <Container>
+                <Head>
+                    <title>Donate – insrt.uk</title>
+                    <meta property="og:title" content="Donate" />
+                    <meta
+                        property="og:description"
+                        content="Help support my work on open source projects."
+                    />
+                </Head>
 
-            <h1>Donate</h1>
-            <RenderContent content={content} />
-        </Container>
+                <h1>Donate</h1>
+                <RenderContent content={content} />
+            </Container>
+        </main>
     );
 };
 

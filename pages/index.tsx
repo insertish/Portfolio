@@ -53,6 +53,7 @@ const Home: NextPage = () => {
                     <img
                         src="https://static.revolt.chat/emoji/mutant/1f44b-10160a.svg"
                         style={{ height: "1.2em", verticalAlign: "top" }}
+                        alt="Wave"
                     />
                 </h1>
                 <Tagline top>

@@ -18,7 +18,7 @@ const Posts: NextPage<{ post: BlogPost; reading: string }> = ({
     reading,
 }) => {
     return (
-        <>
+        <main>
             <Head>
                 <title>{post.Title} – insrt.uk</title>
                 <meta property="og:title" content={post.Title} />
@@ -58,7 +58,7 @@ const Posts: NextPage<{ post: BlogPost; reading: string }> = ({
             <Container>
                 <RenderContent content={post.Content!} />
             </Container>
-        </>
+        </main>
     );
 };
 

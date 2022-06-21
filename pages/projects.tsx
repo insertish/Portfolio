@@ -17,47 +17,51 @@ const Projects: NextPage<Awaited<ReturnType<typeof listProjects>>> = ({
     total,
 }) => {
     return (
-        <Container>
-            <Head>
-                <title>Projects – insrt.uk</title>
-                <meta property="og:title" content="Projects" />
-                <meta
-                    property="og:description"
-                    content="A detailed list of all of my projects."
-                />
-            </Head>
+        <main>
+            <Container>
+                <Head>
+                    <title>Projects – insrt.uk</title>
+                    <meta property="og:title" content="Projects" />
+                    <meta
+                        property="og:description"
+                        content="A detailed list of all of my projects."
+                    />
+                </Head>
 
-            <h1>Projects</h1>
+                <h1>Projects</h1>
 
-            <div
-                style={{
-                    padding: "1em",
-                    fontSize: "2em",
-                    margin: "1em 0",
-                    borderRadius: "12px",
-                    backgroundColor: "rgba(0, 0, 0, 0.2)",
-                }}>
-                This list is currently about 2 years out of date,
-                <br />
-                <small>
-                    {"I'm slowly working on getting everything recent in."}
-                </small>
-                <br />
-                <small>
+                <div
+                    style={{
+                        padding: "1em",
+                        fontSize: "2em",
+                        margin: "1em 0",
+                        borderRadius: "12px",
+                        backgroundColor: "rgba(0, 0, 0, 0.2)",
+                    }}>
+                    This list is currently about 2 years out of date,
+                    <br />
+                    <small>
+                        {"I'm slowly working on getting everything recent in."}
+                    </small>
+                    <br />
                     <small>
                         <small>
-                            {"(it's also missing projects pre-2018 to 2012)"}
+                            <small>
+                                {
+                                    "(it's also missing projects pre-2018 to 2012)"
+                                }
+                            </small>
                         </small>
                     </small>
-                </small>
-            </div>
+                </div>
 
-            <Grid>
-                {projects.map((project) => (
-                    <Card key={project.Slug} project={project} />
-                ))}
-            </Grid>
-        </Container>
+                <Grid>
+                    {projects.map((project) => (
+                        <Card key={project.Slug} project={project} />
+                    ))}
+                </Grid>
+            </Container>
+        </main>
     );
 };
 
