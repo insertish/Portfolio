@@ -10,7 +10,7 @@ import { RenderContent } from "../../components/display/TextBlock";
 import dayjs from "dayjs";
 
 import advancedFormat from "dayjs/plugin/advancedFormat";
-import { useHighlighter } from "../../lib/hljs";
+import Cover from "../../components/display/Cover";
 dayjs.extend(advancedFormat);
 
 const Posts: NextPage<{ post: BlogPost; reading: string }> = ({
@@ -27,28 +27,10 @@ const Posts: NextPage<{ post: BlogPost; reading: string }> = ({
                     <time>{dayjs(post.Date).format("Do MMMM YYYY")}</time>
                 </h5>
             </Container>
-            {post.Cover && (
-                <>
-                    <div
-                        style={{
-                            width: "100%",
-                            height: "420px",
-                            position: "relative",
-                            userSelect: "none",
-                        }}>
-                        <Image
-                            src={getPath(post.Cover.url)}
-                            alt={post.Cover.caption}
-                            objectFit="cover"
-                            layout="fill"
-                        />
-                    </div>
-                    <Container>
-                        <figcaption>{post.Cover.caption}</figcaption>
-                    </Container>
-                </>
-            )}
-            <RenderContent content={post.Content!} />
+            <Cover cover={post.Cover} />
+            <Container>
+                <RenderContent content={post.Content!} />
+            </Container>
         </>
     );
 };

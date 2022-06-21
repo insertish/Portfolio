@@ -1,12 +1,14 @@
+export interface Image {
+    url: string;
+    caption: string;
+}
+
 export interface BlogPost {
     Title: string;
     Slug: string;
     Content?: string;
     Date?: string;
-    Cover?: {
-        url: string;
-        caption: string;
-    };
+    Cover?: Image;
     Subtitle?: string;
 }
 
@@ -16,10 +18,7 @@ export interface Project {
     Slug: string;
     Name: string;
     Description?: string;
-    Cover?: {
-        url: string;
-        caption: string;
-    };
+    Cover?: Image;
     Started?: string;
     Updated?: string;
     ComputedTimestamp?: string;

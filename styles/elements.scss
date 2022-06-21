@@ -7,6 +7,12 @@ figcaption {
     padding: 4px 0;
 }
 
+figure {
+    > figcaption {
+        text-align: center;
+    }
+}
+
 /** Headings */
 h1 {
     font-weight: 700;

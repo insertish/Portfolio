@@ -6,6 +6,6 @@ interface Props {
 
 export const Container = styled.div<Props>`
     padding: ${(props) => props.verticalPadding ?? "0px"} 16px;
-    max-width: min(1080px, 95%);
+    max-width: min(1200px, 95%);
     margin: auto;
 `;

@@ -42,7 +42,7 @@ const Base = styled.a<{ cover?: string }>`
             background-size: cover !important;
             background-position: center !important;
             background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)),
-                url("${getPath(props.cover)}");
+                url("${props.cover}");
         `}
 `;
 

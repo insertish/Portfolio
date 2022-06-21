@@ -22,10 +22,10 @@ function mapCover(v: any): BlogPost["Cover"] | null {
         const root = v.data.attributes;
 
         let url;
-        if (typeof root.formats === "string") {
-            url = root.formats;
-        } else {
+        if (root.formats) {
             url = root.formats.medium.url;
+        } else {
+            url = root.url;
         }
 
         return {
@@ -57,7 +57,7 @@ export const getPost = (slug: string) =>
                             Cover {
                                 data {
                                     attributes {
-                                        formats:url
+                                        url
                                         caption
                                     }
                                 }
@@ -93,6 +93,7 @@ export const listPosts = () =>
                                 Cover {
                                     data {
                                         attributes {
+                                            url
                                             formats
                                             caption
                                         }
@@ -135,7 +136,7 @@ export const getProject = (slug: string) =>
                                     Cover {
                                         data {
                                             attributes {
-                                                formats
+                                                url
                                                 caption
                                             }
                                         }
@@ -207,6 +208,7 @@ export const listProjects = (options?: {
                                 Cover {
                                     data {
                                         attributes {
+                                            url
                                             formats
                                             caption
                                         }
