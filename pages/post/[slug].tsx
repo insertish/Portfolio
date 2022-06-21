@@ -80,7 +80,7 @@ export const getStaticPaths: GetStaticPaths = async () => {
     const posts = await listPosts();
 
     return {
-        paths: [{ params: { slug: posts.map(({ Slug }) => Slug) } }],
+        paths: posts.map(({ Slug }) => ({ params: { slug: Slug } })),
         fallback: "blocking",
     };
 };

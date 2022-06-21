@@ -126,7 +126,7 @@ export const getStaticPaths: GetStaticPaths = async () => {
     const { projects } = await listProjects({ limit: 20 });
 
     return {
-        paths: [{ params: { slug: projects.map(({ Slug }) => Slug) } }],
+        paths: projects.map(({ Slug }) => ({ params: { slug: Slug } })),
         fallback: "blocking",
     };
 };
