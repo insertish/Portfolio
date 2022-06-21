@@ -18,6 +18,10 @@ const nextConfig = {
                 source: "/api/hello",
                 destination: "https://plausible.insrt.uk/api/event",
             },
+            {
+                source: "/uploads/:path*",
+                destination: "https://strapi.insrt.uk/uploads/:path*",
+            },
         ];
     },
 };
