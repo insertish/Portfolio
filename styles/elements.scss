@@ -127,6 +127,10 @@ em {
 footer {
     margin: 4em 0;
     color: black;
-    text-align: center;
     filter: opacity(0.7);
+
+    gap: 4px;
+    display: flex;
+    align-items: center;
+    flex-direction: column;
 }

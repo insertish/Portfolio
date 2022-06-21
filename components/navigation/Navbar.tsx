@@ -15,12 +15,13 @@ const Base = styled.div`
     }
 `;
 
-const Actions = styled.div`
+export const Actions = styled.div`
     gap: 12px;
     display: flex;
+    width: fit-content;
 `;
 
-const Action = styled.div<{ active: boolean }>`
+export const Action = styled.div<{ active: boolean }>`
     color: gray;
     font-size: 1.2em;
     font-weight: 800;
@@ -42,14 +43,18 @@ const Action = styled.div<{ active: boolean }>`
         `}
 `;
 
-export default function Navbar() {
+export function useMatches() {
     const router = useRouter();
-    const matches = useCallback(
+    return useCallback(
         (path: string) => {
             return router.pathname.startsWith(path);
         },
         [router.pathname],
     );
+}
+
+export default function Navbar() {
+    const matches = useMatches();
 
     return (
         <Container>

@@ -264,3 +264,24 @@ export const getHomelab = () =>
             `,
         })
         .then(({ data }) => data.homelab.data.attributes as Homelab);
+
+/**
+ * Get donation information
+ * @returns Donation info
+ */
+export const getDonation = () =>
+    client
+        .query({
+            query: gql`
+                query {
+                    donate {
+                        data {
+                            attributes {
+                                Content
+                            }
+                        }
+                    }
+                }
+            `,
+        })
+        .then(({ data }) => data.donate.data.attributes.Content);
