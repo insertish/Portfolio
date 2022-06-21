@@ -8,6 +8,11 @@ import { CardBase } from "../../display/Card";
 const Base = styled(CardBase)<{ cover?: boolean }>`
     display: flex;
     flex-direction: column;
+    border: 1px solid #ddd;
+
+    &:hover {
+        border: 1px solid transparent;
+    }
 
     .cover {
         width: 100%;

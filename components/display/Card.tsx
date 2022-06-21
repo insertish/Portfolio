@@ -1,17 +1,16 @@
 import styled, { css } from "styled-components";
 
 export const CardBase = styled.a<{ cover?: any }>`
+    border: none;
     display: flex;
     overflow: hidden;
     border-radius: 6px;
-    border: 1px solid #ddd;
 
     color: black;
     background: #eee;
     transition: 0.1s ease filter;
 
     &:hover {
-        border: 1px solid transparent;
         color: ${(props) => (props.cover ? "white" : "black")};
         filter: brightness(0.85);
     }
