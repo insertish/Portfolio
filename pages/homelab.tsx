@@ -9,8 +9,8 @@ const Homelab: NextPage<{ homelab: Homelab }> = ({ homelab }) => {
         <>
             <Container>
                 <h1>Homelab</h1>
+                <RenderContent content={homelab.Content} />
             </Container>
-            <RenderContent content={homelab.Content} />
         </>
     );
 };
