@@ -11,6 +11,7 @@ import dayjs from "dayjs";
 
 import advancedFormat from "dayjs/plugin/advancedFormat";
 import Cover from "../../components/display/Cover";
+import Head from "next/head";
 dayjs.extend(advancedFormat);
 
 const Posts: NextPage<{ post: BlogPost; reading: string }> = ({
@@ -19,6 +20,12 @@ const Posts: NextPage<{ post: BlogPost; reading: string }> = ({
 }) => {
     return (
         <>
+            <Head>
+                <title>{post.Title} – insrt.uk</title>
+                <meta property="og:title" content={post.Title} />
+                <meta property="og:description" content={post.Subtitle} />
+            </Head>
+
             <Container>
                 <Backtrack text="Read other posts" href="/posts" />
                 <h1>{post.Title}</h1>

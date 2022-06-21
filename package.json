@@ -21,6 +21,7 @@
         "@styled-icons/material-outlined": "^10.34.0",
         "@styled-icons/simple-icons": "^10.45.0",
         "@types/markdown-it": "^12.2.3",
+        "balloon-css": "^1.2.0",
         "dayjs": "^1.11.3",
         "frontmatter": "^0.0.3",
         "graphql": "^16.5.0",

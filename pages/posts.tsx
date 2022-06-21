@@ -1,4 +1,5 @@
 import type { NextPage } from "next";
+import Head from "next/head";
 import styled from "styled-components";
 import { Container } from "../components/layout/Container";
 import Card from "../components/pages/posts/Card";
@@ -15,6 +16,15 @@ const List = styled.div`
 const Posts: NextPage<{ posts: BlogPost[] }> = ({ posts }) => {
     return (
         <Container>
+            <Head>
+                <title>Blog – insrt.uk</title>
+                <meta property="og:title" content="Blog" />
+                <meta
+                    property="og:description"
+                    content="My corner of the internet."
+                />
+            </Head>
+
             <h1>Blog Posts</h1>
             <List>
                 {posts.map((post) => (

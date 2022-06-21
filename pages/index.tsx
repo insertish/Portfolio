@@ -3,7 +3,7 @@ import Head from "next/head";
 import styled, { css } from "styled-components";
 import { Container } from "../components/layout/Container";
 import dayjs from "dayjs";
-import { ChevronRight, Mail } from "@styled-icons/entypo";
+import { ChevronRight } from "@styled-icons/entypo";
 import {
     Hero,
     HeroContent,
@@ -39,6 +39,11 @@ const Home: NextPage = () => {
         <>
             <Head>
                 <title>Paul Makles – insrt.uk</title>
+                <meta property="og:title" content="Hej!" />
+                <meta
+                    property="og:description"
+                    content="I'm a 19 year old student living in the UK, I build real-time applications that let people connect together."
+                />
             </Head>
 
             <Container>

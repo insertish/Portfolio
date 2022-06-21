@@ -10,6 +10,7 @@ import { Badge } from "../../components/display/Badge";
 import dayjs from "dayjs";
 import advancedFormat from "dayjs/plugin/advancedFormat";
 import { BadgeContainer } from "../../components/display/BadgeContainer";
+import Head from "next/head";
 dayjs.extend(advancedFormat);
 
 const Projects: NextPage<{ project: Project; reading: string }> = ({
@@ -17,6 +18,12 @@ const Projects: NextPage<{ project: Project; reading: string }> = ({
 }) => {
     return (
         <>
+            <Head>
+                <title>{project.Name} – insrt.uk</title>
+                <meta property="og:title" content={project.Name} />
+                <meta property="og:description" content={project.Description} />
+            </Head>
+
             <Container>
                 <Backtrack text="Browse other projects" href="/projects" />
                 <h1>{project.Name}</h1>

@@ -1,4 +1,5 @@
 import type { NextPage } from "next";
+import Head from "next/head";
 import styled from "styled-components";
 import { Container } from "../components/layout/Container";
 import Card from "../components/pages/projects/Card";
@@ -17,6 +18,15 @@ const Projects: NextPage<Awaited<ReturnType<typeof listProjects>>> = ({
 }) => {
     return (
         <Container>
+            <Head>
+                <title>Projects – insrt.uk</title>
+                <meta property="og:title" content="Projects" />
+                <meta
+                    property="og:description"
+                    content="A detailed list of all of my projects."
+                />
+            </Head>
+
             <h1>Projects</h1>
 
             <div
@@ -31,6 +41,14 @@ const Projects: NextPage<Awaited<ReturnType<typeof listProjects>>> = ({
                 <br />
                 <small>
                     {"I'm slowly working on getting everything recent in."}
+                </small>
+                <br />
+                <small>
+                    <small>
+                        <small>
+                            {"(it's also missing projects pre-2018 to 2012)"}
+                        </small>
+                    </small>
                 </small>
             </div>
 

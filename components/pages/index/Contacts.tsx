@@ -26,7 +26,12 @@ export default function Contacts() {
 
     return (
         <ContactDetails>
-            <a href="https://rvlt.gg/Testers" target="_blank" rel="noreferrer">
+            <a
+                href="https://rvlt.gg/Testers"
+                target="_blank"
+                rel="noreferrer"
+                aria-label="@insert"
+                data-balloon-pos="up">
                 <Contact fg="#ff4654" bg="#101823">
                     <Image
                         width="24px"
@@ -40,7 +45,9 @@ export default function Contacts() {
             <a
                 href="https://discord.com/users/99765584266264576"
                 target="_blank"
-                rel="noreferrer">
+                rel="noreferrer"
+                aria-label="insert#0751"
+                data-balloon-pos="up">
                 <Contact fg="white" bg="#7289DA">
                     <Image
                         width="24px"
@@ -54,7 +61,9 @@ export default function Contacts() {
             <a
                 href="https://github.com/insertish"
                 target="_blank"
-                rel="noreferrer">
+                rel="noreferrer"
+                aria-label="@insertish"
+                data-balloon-pos="up">
                 <Contact fg="white" bg="#171515">
                     <Image
                         width="24px"
@@ -65,7 +74,10 @@ export default function Contacts() {
                     GitHub
                 </Contact>
             </a>
-            <a href={`mailto:${email}`}>
+            <a
+                href={`mailto:${email}`}
+                aria-label={email}
+                data-balloon-pos="up">
                 <Contact bg="#ddd">
                     <Mail size={24} /> Email
                 </Contact>

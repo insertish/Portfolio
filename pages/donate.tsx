@@ -1,4 +1,5 @@
 import type { NextPage } from "next";
+import Head from "next/head";
 import { useLayoutEffect, useState } from "react";
 import { RenderContent } from "../components/display/TextBlock";
 import { Container } from "../components/layout/Container";
@@ -18,12 +19,19 @@ const Donate: NextPage<{ donate: string }> = ({ donate }) => {
     }
 
     return (
-        <>
-            <Container>
-                <h1>Donate</h1>
-                <RenderContent content={content} />
-            </Container>
-        </>
+        <Container>
+            <Head>
+                <title>Donate – insrt.uk</title>
+                <meta property="og:title" content="Donate" />
+                <meta
+                    property="og:description"
+                    content="Help support my work on open source projects."
+                />
+            </Head>
+
+            <h1>Donate</h1>
+            <RenderContent content={content} />
+        </Container>
     );
 };
 
