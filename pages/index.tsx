@@ -11,6 +11,7 @@ import {
     HeroLayout,
 } from "../components/pages/index/Hero";
 import Contacts from "../components/pages/index/Contacts";
+import Link from "next/link";
 
 const Tagline = styled.h2<{ top?: boolean; bottom?: boolean }>`
     ${(props) =>
@@ -81,9 +82,9 @@ const Home: NextPage = () => {
                     <HeroContent>
                         <h1>Revolt</h1>
                         <p>Open source user-first chat platform.</p>
-                        <a href="/project/revolt">
+                        <Link href="/project/revolt">
                             View <ChevronRight size={32} />
-                        </a>
+                        </Link>
                     </HeroContent>
                 </HeroLayout>
                 <HeroHack bg="#1E1E1E" />
@@ -100,9 +101,9 @@ const Home: NextPage = () => {
                             Streaming platform built for creators and their
                             communities.
                         </p>
-                        <a href="/project/lightspeed">
+                        <Link href="/project/lightspeed">
                             View <ChevronRight size={32} />
-                        </a>
+                        </Link>
                     </HeroContent>
                 </HeroLayout>
                 <HeroHack bg="#11131f" />
