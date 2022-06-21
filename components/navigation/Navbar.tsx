@@ -56,10 +56,10 @@ export default function Navbar() {
             <Base>
                 <Title />
                 <Actions>
-                    <Action active={matches("/projects")}>
+                    <Action active={matches("/project")}>
                         <Link href="/projects">Projects</Link>
                     </Action>
-                    <Action active={matches("/posts")}>
+                    <Action active={matches("/post")}>
                         <Link href="/posts">Posts</Link>
                     </Action>
                     <Action active={matches("/homelab")}>
