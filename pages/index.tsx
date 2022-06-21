@@ -84,7 +84,9 @@ const Home: NextPage = () => {
                         <h1>Revolt</h1>
                         <p>Open source user-first chat platform.</p>
                         <Link href="/project/revolt">
-                            View <ChevronRight size={32} />
+                            <a>
+                                View <ChevronRight size={32} />
+                            </a>
                         </Link>
                     </HeroContent>
                 </HeroLayout>
@@ -103,7 +105,9 @@ const Home: NextPage = () => {
                             communities.
                         </p>
                         <Link href="/project/lightspeed">
-                            View <ChevronRight size={32} />
+                            <a>
+                                View <ChevronRight size={32} />
+                            </a>
                         </Link>
                     </HeroContent>
                 </HeroLayout>

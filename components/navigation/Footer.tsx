@@ -14,16 +14,24 @@ export default function Footer() {
             <span>Made in 🇬🇧 🇵🇱</span>
             <Actions>
                 <Action active={matches("/project")}>
-                    <Link href="/projects">Projects</Link>
+                    <Link href="/projects">
+                        <a>Projects</a>
+                    </Link>
                 </Action>
                 <Action active={matches("/post")}>
-                    <Link href="/posts">Posts</Link>
+                    <Link href="/posts">
+                        <a>Posts</a>
+                    </Link>
                 </Action>
                 <Action active={matches("/donate")}>
-                    <Link href="/donate">Donate</Link>
+                    <Link href="/donate">
+                        <a>Donate</a>
+                    </Link>
                 </Action>
                 <Action active={matches("/homelab")}>
-                    <Link href="/homelab">Homelab</Link>
+                    <Link href="/homelab">
+                        <a>Homelab</a>
+                    </Link>
                 </Action>
             </Actions>
         </footer>
