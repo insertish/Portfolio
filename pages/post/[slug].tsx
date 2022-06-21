@@ -43,7 +43,9 @@ const Posts: NextPage<{ post: BlogPost; reading: string }> = ({
                             layout="fill"
                         />
                     </div>
-                    <h6>{post.Cover.caption}</h6>
+                    <Container>
+                        <figcaption>{post.Cover.caption}</figcaption>
+                    </Container>
                 </>
             )}
             <RenderContent content={post.Content!} />
