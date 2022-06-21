@@ -1,5 +1,4 @@
 import type { GetServerSideProps, NextPage } from "next";
-import Image from "next/image";
 import { Backtrack } from "../../components/display/Backtrack";
 import { Container } from "../../components/layout/Container";
 import { getPath, getPost } from "../../lib/graphql";
@@ -24,6 +23,27 @@ const Posts: NextPage<{ post: BlogPost; reading: string }> = ({
                 <title>{post.Title} – insrt.uk</title>
                 <meta property="og:title" content={post.Title} />
                 <meta property="og:description" content={post.Subtitle} />
+                <meta property="twitter:card" content="summary_large_image" />
+                {post.Cover && (
+                    <>
+                        <meta
+                            property="og:image"
+                            content={getPath(post.Cover.url)}
+                        />
+                        <meta
+                            property="twitter:image"
+                            content={getPath(post.Cover.url)}
+                        />
+                        <meta
+                            property="og:image:width"
+                            content={post.Cover.width.toString()}
+                        />
+                        <meta
+                            property="og:image:height"
+                            content={post.Cover.height.toString()}
+                        />
+                    </>
+                )}
             </Head>
 
             <Container>

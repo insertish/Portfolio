@@ -1,7 +1,7 @@
 import type { GetServerSideProps, NextPage } from "next";
 import { Backtrack } from "../../components/display/Backtrack";
 import { Container } from "../../components/layout/Container";
-import { getProject } from "../../lib/graphql";
+import { getPath, getProject } from "../../lib/graphql";
 import { Project } from "../../lib/types";
 import { RenderContent } from "../../components/display/TextBlock";
 import Cover from "../../components/display/Cover";
@@ -22,6 +22,27 @@ const Projects: NextPage<{ project: Project; reading: string }> = ({
                 <title>{project.Name} – insrt.uk</title>
                 <meta property="og:title" content={project.Name} />
                 <meta property="og:description" content={project.Description} />
+                <meta property="twitter:card" content="summary_large_image" />
+                {project.Cover && (
+                    <>
+                        <meta
+                            property="og:image"
+                            content={getPath(project.Cover.url)}
+                        />
+                        <meta
+                            property="twitter:image"
+                            content={getPath(project.Cover.url)}
+                        />
+                        <meta
+                            property="og:image:width"
+                            content={project.Cover.width.toString()}
+                        />
+                        <meta
+                            property="og:image:height"
+                            content={project.Cover.height.toString()}
+                        />
+                    </>
+                )}
             </Head>
 
             <Container>

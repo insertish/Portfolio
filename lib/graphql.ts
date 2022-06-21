@@ -31,6 +31,8 @@ function mapCover(v: any): BlogPost["Cover"] | null {
         return {
             url,
             caption: root.caption,
+            width: root.width ?? null,
+            height: root.height ?? null,
         };
     } else {
         return null;
@@ -51,6 +53,7 @@ export const getPost = (slug: string) =>
                     data {
                         attributes {
                             Title
+                            Subtitle
                             Content
                             Slug
                             Date
@@ -59,6 +62,8 @@ export const getPost = (slug: string) =>
                                     attributes {
                                         url
                                         caption
+                                        width
+                                        height
                                     }
                                 }
                             }
@@ -138,6 +143,8 @@ export const getProject = (slug: string) =>
                                             attributes {
                                                 url
                                                 caption
+                                                width
+                                                height
                                             }
                                         }
                                     }

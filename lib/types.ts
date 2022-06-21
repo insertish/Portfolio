@@ -1,6 +1,8 @@
 export interface Image {
     url: string;
     caption: string;
+    width: number;
+    height: number;
 }
 
 export interface BlogPost {
