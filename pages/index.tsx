@@ -30,6 +30,10 @@ const Whitespace = styled.div`
     height: 4em;
 `;
 
+const About = styled.p`
+    font-family: "Open Sans", sans-serif;
+`;
+
 const Home: NextPage = () => {
     return (
         <>
@@ -98,6 +102,26 @@ const Home: NextPage = () => {
                 </HeroLayout>
                 <HeroHack bg="#11131f" />
             </Hero>
+            <Container>
+                <Whitespace />
+
+                <h1>About Me</h1>
+                <About>
+                    {
+                        "I'm a software developer originating from Poland but I've lived most of my life in the United Kingdom. I've been programming since around 9 years old, circa 2012. I didn't really make anything of note if anything at all, but over the years this has given me the chance to try working on a bunch of different things ranging from low-level operating systems to making games to high-level website development."
+                    }
+                </About>
+                <About>
+                    {
+                        "Obviously that's my main line of work, but I do both more physical and more creative stuff from time to time, for example, I have an interest in tinkering with electronics but I also like to draw."
+                    }
+                </About>
+                <About>
+                    {
+                        "My current main focus right now is Revolt but I do also work on Lightspeed with a bunch of people and have a host of my own personal projects that I'm still getting ready to show."
+                    }
+                </About>
+            </Container>
         </>
     );
 };
