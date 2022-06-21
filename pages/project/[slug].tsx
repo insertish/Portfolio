@@ -123,7 +123,7 @@ export const getStaticProps: GetStaticProps = async (context) => {
 };
 
 export const getStaticPaths: GetStaticPaths = async () => {
-    const { projects } = await listProjects({ limit: 20 });
+    const { projects } = await listProjects({ limit: 100_000 });
 
     return {
         paths: projects.map(({ Slug }) => ({ params: { slug: Slug } })),
