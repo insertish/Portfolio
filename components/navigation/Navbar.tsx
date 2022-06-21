@@ -13,12 +13,18 @@ const Base = styled.div`
     a {
         border: none;
     }
+
+    @media screen and (max-width: 700px) {
+        flex-direction: column;
+    }
 `;
 
 export const Actions = styled.div`
     gap: 12px;
     display: flex;
+    flex-wrap: wrap;
     width: fit-content;
+    justify-content: center;
 `;
 
 export const Action = styled.div<{ active: boolean }>`

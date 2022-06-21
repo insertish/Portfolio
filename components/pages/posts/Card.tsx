@@ -7,8 +7,6 @@ import relativeTime from "dayjs/plugin/relativeTime";
 dayjs.extend(relativeTime);
 
 const Base = styled(CardBase)<{ cover?: string }>`
-    height: 80px;
-
     div {
         padding: 1em;
         flex-grow: 1;
