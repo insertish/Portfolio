@@ -5,14 +5,18 @@ import MarkdownIt from "markdown-it";
 const md = new MarkdownIt();
 
 export default async function handler(
-    _req: NextApiRequest,
+    req: NextApiRequest,
     res: NextApiResponse<any>,
 ) {
-    const req = await fetch(
+    if (req.headers["authorization"] !== process.env.ADMIN_TOKEN) {
+        return res.status(500).send("Unauthorized");
+    }
+
+    const gist = await fetch(
         "https://gist.githubusercontent.com/insertish/9cca9b6aa75a7cf34d050368d067ecf5/raw?bust=1",
     );
 
-    const data = await req.text();
+    const data = await gist.text();
 
     fetch("https://strapi.insrt.uk/api/posts/6", {
         method: "PUT",

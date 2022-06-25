@@ -5,9 +5,13 @@ import { getPath } from "../../../lib/graphql";
 import { Project } from "../../../lib/types";
 
 export default async function handler(
-    _req: NextApiRequest,
+    req: NextApiRequest,
     res: NextApiResponse<any>,
 ) {
+    if (req.headers["authorization"] !== process.env.ADMIN_TOKEN) {
+        return res.status(500).send("Unauthorized");
+    }
+
     const query = qs.stringify(
         {
             pagination: {
