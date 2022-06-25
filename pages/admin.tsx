@@ -2,6 +2,7 @@ import type { NextPage } from "next";
 import Head from "next/head";
 import { useEffect, useLayoutEffect, useState } from "react";
 import styled from "styled-components";
+import CommentBox from "../components/display/CommentBox";
 import { Container } from "../components/layout/Container";
 
 const Input = styled.input`
@@ -97,6 +98,7 @@ const Admin: NextPage = () => {
                         <li key={text}>{text}</li>
                     ))}
                 </ul>
+                <CommentBox />
             </Container>
         </main>
     );

@@ -11,6 +11,7 @@ import dayjs from "dayjs";
 import advancedFormat from "dayjs/plugin/advancedFormat";
 import { BadgeContainer } from "../../components/display/BadgeContainer";
 import Head from "next/head";
+import CommentBox from "../../components/display/CommentBox";
 dayjs.extend(advancedFormat);
 
 const Projects: NextPage<{ project: Project; reading: string }> = ({
@@ -109,6 +110,7 @@ const Projects: NextPage<{ project: Project; reading: string }> = ({
             <Cover cover={project.Cover} />
             <Container>
                 <RenderContent content={project.Content!} />
+                <CommentBox />
             </Container>
         </main>
     );

@@ -1,5 +1,6 @@
 import type { NextPage } from "next";
 import Head from "next/head";
+import CommentBox from "../components/display/CommentBox";
 import { RenderContent } from "../components/display/TextBlock";
 import { Container } from "../components/layout/Container";
 import { getHomelab } from "../lib/graphql";
@@ -20,6 +21,7 @@ const Homelab: NextPage<{ homelab: Homelab }> = ({ homelab }) => {
 
                 <h1>Homelab</h1>
                 <RenderContent content={homelab.Content} />
+                <CommentBox />
             </Container>
         </main>
     );

@@ -12,6 +12,7 @@
         "@apollo/client": "^3.6.8",
         "@fontsource/open-sans": "^4.5.10",
         "@fontsource/quicksand": "^4.5.9",
+        "@giscus/react": "^2.0.6",
         "@styled-icons/bootstrap": "^10.34.0",
         "@styled-icons/boxicons-regular": "^10.38.0",
         "@styled-icons/entypo": "^10.34.0",
@@ -33,6 +34,7 @@
         "qs": "^6.10.5",
         "react": "18.2.0",
         "react-dom": "18.2.0",
+        "react-utterances": "^0.6.4",
         "reading-time": "^1.5.0",
         "sass": "^1.52.3",
         "styled-components": "^5.3.5"

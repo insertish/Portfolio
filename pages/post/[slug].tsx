@@ -5,6 +5,7 @@ import { getPath, getPost, listPosts } from "../../lib/graphql";
 import { BlogPost } from "../../lib/types";
 import readingTime from "reading-time";
 import { RenderContent } from "../../components/display/TextBlock";
+import CommentBox from "../../components/display/CommentBox";
 
 import dayjs from "dayjs";
 
@@ -57,6 +58,7 @@ const Posts: NextPage<{ post: BlogPost; reading: string }> = ({
             <Cover cover={post.Cover} />
             <Container>
                 <RenderContent content={post.Content!} />
+                <CommentBox />
             </Container>
         </main>
     );
