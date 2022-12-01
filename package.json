@@ -12,7 +12,7 @@
         "@apollo/client": "^3.6.8",
         "@fontsource/open-sans": "^4.5.10",
         "@fontsource/quicksand": "^4.5.9",
-        "@giscus/react": "^2.0.6",
+        "@giscus/react": "^2.2.4",
         "@styled-icons/bootstrap": "^10.34.0",
         "@styled-icons/boxicons-regular": "^10.38.0",
         "@styled-icons/entypo": "^10.34.0",

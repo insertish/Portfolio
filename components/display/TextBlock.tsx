@@ -2,6 +2,7 @@ import styled from "styled-components";
 import { useHighlighter } from "../../lib/hljs";
 
 export const TextBlock = styled.div`
+    font-size: 20px;
     font-family: "Open Sans", sans-serif;
 
     pre code {
