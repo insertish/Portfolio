@@ -223,6 +223,7 @@ export const listProjects = (options?: {
                                 }
                                 Started
                                 Updated
+                                ComputedTimestamp
                                 Featured
                                 Type
                                 Languages
