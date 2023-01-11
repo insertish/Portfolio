@@ -12,24 +12,47 @@ export default async function handler(
         return res.status(500).send("Unauthorized");
     }
 
-    const gist = await fetch(
-        "https://gist.githubusercontent.com/insertish/9cca9b6aa75a7cf34d050368d067ecf5/raw?bust=1",
-    );
+    {
+        const gist = await fetch(
+            "https://gist.githubusercontent.com/insertish/9cca9b6aa75a7cf34d050368d067ecf5/raw?bust=1",
+        );
 
-    const data = await gist.text();
+        const data = await gist.text();
 
-    fetch("https://strapi.insrt.uk/api/posts/6", {
-        method: "PUT",
-        body: JSON.stringify({
-            data: {
-                Content: md.render(data),
+        fetch("https://strapi.insrt.uk/api/posts/6", {
+            method: "PUT",
+            body: JSON.stringify({
+                data: {
+                    Content: md.render(data),
+                },
+            }),
+            headers: {
+                "Content-Type": "application/json",
+                Authorization: `Bearer ${process.env.API_KEY}`,
             },
-        }),
-        headers: {
-            "Content-Type": "application/json",
-            Authorization: `Bearer ${process.env.API_KEY}`,
-        },
-    });
+        });
+    }
+
+    {
+        const gist = await fetch(
+            "https://gist.githubusercontent.com/insertish/0bf127a90fe37c5aa16531afbbba907d/raw?bust=1",
+        );
+
+        const data = await gist.text();
+
+        fetch("https://strapi.insrt.uk/api/posts/9", {
+            method: "PUT",
+            body: JSON.stringify({
+                data: {
+                    Content: md.render(data),
+                },
+            }),
+            headers: {
+                "Content-Type": "application/json",
+                Authorization: `Bearer ${process.env.API_KEY}`,
+            },
+        });
+    }
 
     res.status(200).send("OK");
 }
