@@ -60,7 +60,12 @@ const Admin: NextPage = () => {
             setOutput((output) => [...output, `${action}: ${result}`]);
 
         try {
-            const res = await fetch(`/api/automation/${action}`);
+            const res = await fetch(`/api/automation/${action}`, {
+                headers: {
+                    authorization: token,
+                },
+            });
+
             push(await res.text());
         } catch (err) {
             push("" + err);
