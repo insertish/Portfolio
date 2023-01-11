@@ -43,7 +43,10 @@ const Home: NextPage = () => {
                 <meta property="og:title" content="Hej!" />
                 <meta
                     property="og:description"
-                    content="I'm a 19 year old student living in the UK, I build real-time applications that let people connect together."
+                    content={`${dayjs().diff(
+                        1047081600000,
+                        "y",
+                    )} year old student living in the UK.\nI build real-time applications that let people connect together.`}
                 />
             </Head>
 

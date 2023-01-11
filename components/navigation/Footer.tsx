@@ -11,7 +11,7 @@ export default function Footer() {
     return (
         <footer>
             <span>&copy; {dayjs().year()} Paul Makles</span>
-            <span>Made in 🇬🇧 🇵🇱</span>
+            <span>🇪🇺 🇬🇧 🇵🇱</span>
             <Actions>
                 <Action active={matches("/project")}>
                     <Link href="/projects">
