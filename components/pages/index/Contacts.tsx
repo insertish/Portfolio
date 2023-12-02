@@ -30,7 +30,7 @@ export default function Contacts() {
                 href="https://rvlt.gg/Testers"
                 target="_blank"
                 rel="noreferrer"
-                aria-label="@insert"
+                aria-label="@insert#6271"
                 data-balloon-pos="up">
                 <Contact fg="#ff4654" bg="#101823">
                     <Image

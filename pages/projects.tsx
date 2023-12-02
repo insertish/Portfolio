@@ -38,11 +38,11 @@ const Projects: NextPage<Awaited<ReturnType<typeof listProjects>>> = ({
                         borderRadius: "12px",
                         backgroundColor: "rgba(0, 0, 0, 0.2)",
                     }}>
-                    This list is currently about 2 years out of date,
+                    This list is currently about{" "}
+                    <span style={{ textDecoration: "line-through" }}>2</span> 3
+                    years out of date,
                     <br />
-                    <small>
-                        {"I'm slowly working on getting everything recent in."}
-                    </small>
+                    <small>{"I will eventually update it..."}</small>
                     <br />
                     <small>
                         <small>
